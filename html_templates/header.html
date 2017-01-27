@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--<meta name="viewport" content="width=device-width">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <title>Document</title>
+    <link media="all" href="css/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <!--<link media="all" href="../first_tactical.min.css" rel="stylesheet" type="text/css">-->
+    <link media="all" href="../first_tactical.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/transformicons.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+</head>
+<body>
+
+<header id="header">
+    <section>
+        <article class="top-left">
+            <button type="button" class="tcon tcon-menu--xbutterfly" aria-label="toggle menu">
+                <span class="tcon-menu__lines" aria-hidden="true"></span>
+                <span class="tcon-visuallyhidden">toggle menu</span>
+            </button>
+            <div class="our-mission"><a class="anchor-btn" href="#">Our Mission</a></div>
+            <div id="country-switcher" class="dropdown">
+                <a href="#" class="anchor-btn">
+                    US&nbsp;<img src="images/flag-icon-us.jpg"><span>&#709;</span>
+                    <!--US&nbsp;&nbsp;<img src="images/flag-icon-us.jpg"><span></span>-->
+                </a>
+                <ul class="dropdown-menu anchor-popup">
+                    <li><a href="#">US <img src="images/flag-icon-us.jpg"></a></li>
+                    <li><a href="#">UK <img src="images/flag-icon-uk.jpg"></a></li>
+                    <li><a href="#">AU <img src="images/flag-icon-au.jpg"></a></li>
+                </ul>
+            </div>
+        </article>
+        <article class="top-mid logo">
+            <a title="Home" href="https://www.firsttactical.com">
+                <img src="images/logo.png" alt="First Tactical Company Logo"/>
+            </a>
+        </article>
+        <article class="top-right">
+            <div class="search_box">
+                <a class="anchor-btn" href="javascript:void(0)">
+                    <img src="images/icon-search-grey2.png"/>
+                    <span class="txt tablet-show">Search</span>
+                </a>
+                <form action="/search">
+                    <input title="Press enter to search" class="anchor-popup" type="search" placeholder="Search"
+                           name="q">
+                    <input type="hidden" value="product" name="type">
+                </form>
+            </div>
+            <div class="login_box" id="login_box">
+                <a class="anchor-btn" id="login" href="javascript:void(0)">
+                    <img src="//cdn.shopify.com/s/files/1/1125/0762/t/3/assets/icon-user-grey2.png?15171049479125581798"
+                         alt="user"/>
+                    <span class="txt tablet-show" id="name">Login</span>
+                </a>
+                <!-- Login pop up Start -->
+                <div class="login anchor-popup">
+                    <div id="customer">
+                        <p class="save_info">Login now to checkout using your saved info.</p>
+                        <form class="loginForm" method="post" action="https://www.firsttactical.com/account/login"
+                              id="customer_login" accept-charset="UTF-8">
+                            <input type="hidden" value="customer_login" name="form_type"/>
+                            <input type="hidden" name="utf8" value="✓"/>
+                            <input type="hidden" value="customer_login" name="form_type"/>
+                            <input type="hidden" name="return_to" value="/"/>
+                            <input type="hidden" name="utf8" value="✓"/>
+
+                            <label class="text" for="customer_email">Email</label>
+                            <input id="customer_email" maxlength="255" name="customer[email]"
+                                   value="" class="email" type="text" required/>
+                            <label class="text" for="customer_password">Password</label>
+                            <input id="customer_password" name="customer[password]" value=""
+                                   class="password" type="password" autocomplete="off" required/>
+                            <div id="errors" style="display:none;"></div>
+                            <input id="sign_in" alt="Login" value="Login" class="login_btn" type="submit"/>
+                            <a href="/account/login#recover" class="forgot">Forgot your password?</a>
+                            <a title="New User?" class="forgot" href="/account/register">New User?</a>
+                        </form>
+                    </div>
+                    <script type="text/javascript">
+                        //$('.loginForm input').on("change paste keyup", function() {
+                        //                            if ($(this).parents('li').hasClass('error')) {
+                        //                                $(this).parents('li').removeClass('error');
+                        //                            }
+                        //                            if ($(this).parents('div').hasClass('error')) {
+                        //                                $(this).parents('div').removeClass('error');
+                        //                            }
+                        //});
+
+                        $('#customer_login').submit(function (e) {
+                            e.preventDefault();
+                            var randnum = Math.floor(Math.random() * 1001);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/account/login",
+                                dataType: "html",
+                                cache: false,
+                                data: $('#customer_login').serialize() + "&random=" + randnum,
+                                success: function (data) {
+                                    var name = $(data).find('#name').text();
+                                    $('#name').html(name);
+                                    $("#login").attr("href", "/account");
+                                    $("#customer_login").slideUp(500);
+                                    $("#customer .save_info").html("You have successfully logged in.");
+                                    $(".login_box .login").delay(5000).fadeOut();
+                                },
+                                error: function (data) {
+                                    $('#errors').html('Invalid Login Credentials').fadeIn().delay(2000).fadeOut();
+                                    console.clear();
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+                <!-- Login pop up End -->
+            </div>
+            <div class="cart_box">
+                <a class="anchor-btn" href="javascript:void(0)">
+                    <img src="images/icon-cart-grey2.png" alt="cart">
+                    <span class="txt tablet-show">Cart </span>[<span class="item" id="cartCount">0</span>]
+                </a>
+                <!-- Mini Cart Start -->
+                <div class="mini_cart anchor-popup" id="mini_cart">
+                    <p class="items">
+                        Your Cart (<span id="cart_item_count">3 items</span>)
+                    </p>
+                    <div id="cart_items">
+                        <div class="item_box">
+                            <img src="//cdn.shopify.com/s/files/1/1125/0762/products/150003-men-medium-duty-glove-le-black_medium.jpg?v=1454970110"/>
+                            <div class="item_size">
+                                <h4 class="item_title">Men’s Medium Duty Glove</h4>
+                                <p>Color: Black</p>
+                                <p>Size: L</p>
+                                <p>Qty: 1</p>
+                                <p class="price">PRICE: $29.99</p>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <img src="//cdn.shopify.com/s/files/1/1125/0762/products/112004-men-tactix-ss-bdu-shirt-le-khaki_medium.jpg?v=1454956843"/>
+                            <div class="item_size">
+                                <h4 class="item_title">Men's Tactix Series Short Sleeve BDU Shirt</h4>
+                                <p>Color: Khaki</p>
+                                <p>Size: L</p>
+                                <p>Length: Regular</p>
+                                <p>Qty: 1</p>
+                                <p class="price">PRICE: $59.99</p>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <img src="//cdn.shopify.com/s/files/1/1125/0762/products/114007-mens-specialist-ems-pant-midnightnavy-front_medium.jpg?v=1457476864"/>
+                            <div class="item_size">
+                                <h4 class="item_title">Men's Specialist EMS Pant</h4>
+                                <p>Color: Midnight Navy</p>
+                                <p>Size: 34</p>
+                                <p>Length: 32</p>
+                                <p>Qty: 1</p>
+                                <p class="price">PRICE: $39.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_box">
+                        <div class="button_block">
+                            <a class="btn" href="/cart">
+                                <span class="right_arrow">VIEW CART</span>
+                            </a>
+                        </div>
+                        <p class="shipping">No Hassle Returns.</p>
+                    </div>
+                </div>
+                <!-- Mini Cart End -->
+            </div>
+        </article>
+    </section>
+    <nav id="nav">
+        <div id="mobile-nav-top-bar"></div>
+        <ul>
+            <li><a href="http://www.microsoft.com">Pants</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="http://www.microsoft.com">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li class="nav-image">
+                        <a href="#" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/pants-dropdown.jpg?16302011163345398032)
+                            no-repeat center top">
+                            <p>Tactix Series Tactical Pants</p>
+                            <div class="learn_more">Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li><a href="#">Shirts</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li class="nav-image">
+                        <a href="#" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/shirts-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>The Tactix BDU Has It All</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#">Gloves</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li class="nav-image">
+                        <a href="#" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gloves-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Men's Medium Duty Padded Glove</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Outerwear</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/outerwear-men">Men</a></li>
+                    <li><a href="/collections/outerwear-women">Women</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-outerwear" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/outerwear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Tactix Series System Parka</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="is-reversed">
+                <a href="/collections/footwear">Footwear</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/footwear-men">Men</a></li>
+                    <li><a href="/collections/footwear-women">Women</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-footwear" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/footwear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>The 8" Duty Boot</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="is-reversed">
+                <a href="/collections/bags">Bags</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/bags-packs">Packs</a></li>
+                    <li><a href="/collections/bags-pouches">Pouches</a></li>
+                    <li><a href="/collections/bags-gun-bags">Gun Bags</a></li>
+                    <li><a href="/collections/bags-everyday-carry">Everyday Carry</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-bags" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/bags-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Tactix 1-Day Plus Backpack</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- we can use a function to calculate the number of nav items and then add the class is-reversed to the last half -->
+            <li class="compressed is-reversed">
+                <a href="/collections/gear">Gear</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/gear-knives">Belts</a></li>
+                    <li><a href="/collections/gear-flashlights">Flashlights</a></li>
+                    <li><a href="/collections/gear-knives">Knives</a></li>
+                    <li><a href="/collections/gear-belts">Watches</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-knives" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Diamondback Knife</p>
+                            <div title="Learn More">Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="decompressed">
+                <a href="/collections/socks">Belts</a>
+                <ul class="">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/socks">Socks</a></li>
+                </ul>
+            </li>
+            <li class="decompressed is-reversed">
+                <a href="/collections/gear">Flashlights</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/gear-knives">Knives</a></li>
+                    <li><a href="/collections/gear-flashlights">Flashlights</a></li>
+                    <li><a href="/collections/gear-joint-protection">Joint Protection</a></li>
+                    <li><a href="/collections/gear-belts">Belts</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-knives" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Diamondback Knife</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="decompressed is-reversed">
+                <a href="/collections/gear">Knives</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/gear-knives">Knives</a></li>
+                    <li><a href="/collections/gear-flashlights">Flashlights</a></li>
+                    <li><a href="/collections/gear-joint-protection">Joint Protection</a></li>
+                    <li><a href="/collections/gear-belts">Belts</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-knives" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Diamondback Knife</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="decompressed is-reversed">
+                <a href="/collections/gear">Watches</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/gear-knives">Knives</a></li>
+                    <li><a href="/collections/gear-flashlights">Flashlights</a></li>
+                    <li><a href="/collections/gear-joint-protection">Joint Protection</a></li>
+                    <li><a href="/collections/gear-belts">Belts</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-knives" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Diamondback Knife</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="is-reversed">
+                <a href="/collections/socks">Blog</a>
+                <ul class="has-nav-image">
+                    <li><span>Shop Now</span></li>
+                    <li><a href="/collections/gear-knives">Knives</a></li>
+                    <li><a href="/collections/gear-flashlights">Flashlights</a></li>
+                    <li><a href="/collections/gear-joint-protection">Joint Protection</a></li>
+                    <li><a href="/collections/gear-belts">Belts</a></li>
+                    <li class="nav-image">
+                        <a href="/pages/hero-knives" style="background: url(//cdn.shopify.com/s/files/1/1125/0762/t/2/assets/gear-dropdown.jpg?16302011163345398032) no-repeat center top">
+                            <p>Diamondback Knife</p>
+                            <div>Learn More</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section class="offer">
+        FREE Shipping &amp; FREE returns <span class="shipping">on all u.s. orders</span>
+        <a class="details fancybox_2" href="#shopping_details">
+            <span class="link">Details</span>
+            <span class="arrow"> &rsaquo;</span></a>
+        <div id="shopping_details" class="shipping_details_pop" style="display: none;">
+            <h2 class="shipping">Free shipping</h2>
+            <div class="sub_title"><span>&amp; free returns</span> on all orders</div>
+            <p class="promo_info">NO CODE REQUIRED. JUST FAST AND FREE.</p>
+            <h4 class="sml_title">Free Shipping on all orders</h4>
+            <p class="detail">We offer USPS, FedEx ground, 2-Day, and overnight shipping. <br>
+                Free shipping is offered for ground shipments only.</p>
+            <h4 class="sml_title">Free returns on all orders</h4>
+            <p class="detail">First Tactical has a 30-day returns and exchanges policy.<br>
+                You may return your merchandise to First Tactical within 30 days upon the receipt of your product.</p>
+            <div class="close_text">Close</div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".fancybox_2").fancybox({
+                    padding: 0,
+                    'transitionIn': 'elastic',
+                    'transitionOut': 'elastic',
+                    'speedIn': 600,
+                    'speedOut': 200
+                });
+
+                $('.close_text').click(function () {
+                    $.fancybox.close();
+                });
+            });
+        </script>
+    </section>
+    <nav class="nav-professions">
+        <ul>
+            <li><a href="#">Law Enforcement</a></li>
+            <li><a href="#">Fire</a></li>
+            <li><a href="#">EMS</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main id="home">
+    <section class="hero">
+        <ul class="slider">
+            <li>
+                <img src="images/hero_parka.jpg">
+                <details>
+                    <h3>Designed to move and breathe</h3>
+                    <h2>Tactix Series System Parka</h2>
+                    <p>100% waterproof, breathable, fully seam-sealed wind resistant nylon outer shell and a zip-in
+                        SoftShell gives this jacket the edge you need in the field.</p>
+                    <button>Shop Now<span class="arrow"></span></button>
+                </details>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </section>
+    <section class="professions">
+        <h2>Choose your profession</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut facilisis nisi. Maecenas lacinia.</p>
+        <ul>
+            <li><a><img src="images/emblem_le.png">Law Enformcent</a></li>
+            <li><a><img src="images/emblem_fire.png">Fire</a></li>
+            <li><a><img src="images/emblem_ems.png">EMS</a></li>
+        </ul>
+    </section>
+    <section class="articles">
+        <article>
+            <img src="images/article_medium_duty_light.jpg">
+            <summary>
+                <h4>Introducing</h4>
+                <h3>The medium duty light</h3>
+                <p>Our durable flashlight is heavy duty enough to withstand nightly field use and easily clips to
+                    pockets or everyday kit.</p>
+            </summary>
+        </article>
+        <article>
+            <img src="images/article_diamondback_tanto.jpg">
+            <summary>
+                <h4>New Diamondback Tanto Knife</h4>
+                <h3>cutting edge control</h3>
+                <p>A knife that boasts better performance in feature and function. Under stress, when performance
+                    matters, you don’t have to look or feel for anything — First Tactical knives reliably perform.</p>
+            </summary>
+        </article>
+    </section>
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <a href="">View All</a>
+        <ul>
+            <li>
+                <img src="images/featured_product_1.jpg">
+                <p><span class="title">Men’s 8” Side Zip Duty Boot</span><span class="price">$74.99</span></p>
+                <div class="rating"></div>
+            </li>
+            <li>
+                <img src="images/featured_product_2.jpg">
+                <p><span class="title">Ascend Messenger Bag</span><span class="price">$89.99</span></p>
+                <div class="rating"></div>
+            </li>
+            <li>
+                <img src="images/featured_product_3.jpg">
+                <p><span class="title">Men’s Tactix Tactical Pants</span><span class="price">$64.99</span></p>
+                <div class="rating"></div>
+            </li>
+            <li>
+                <img src="images/featured_product_4.jpg">
+                <p><span class="title">Men's Tactix Series Long Sleeve BDU Shirt</span><span class="price">$59.99</span>
+                </p>
+                <div class="rating"></div>
+            </li>
+            <li>
+                <img src="images/featured_product_5.jpg">
+                <p><span class="title">Women’s Performance Long Sleeve Polo</span><span class="price">$34.99</span></p>
+                <div class="rating"></div>
+            </li>
+            <!-- Product Image sizes are 2000x2293 -->
+            <!-- This image size is 265x304 -->
+        </ul>
+    </section>
+    <section class="branding">
+        <article class="direct">
+            <img src="images/branding_direct_bg.jpg">
+            <h2>Tactical Gear Sold Directly To You</h2>
+            <p>In traditional retail, a designer shirt is marked up 3x by the time it reaches the customer.</p>
+            <h3>We do things differently.</h3>
+            <div>
+                <img src="images/branding_direct_play_button.gif">
+                <h2>watch First Tactical Brand Video</h2>
+            </div>
+        </article>
+        <article class="reviews">
+            <ul>
+                <li>
+                    <h2>Tactix 1-Day Plus Backpack</h2>
+                    <summary>
+                        <div class="rating">
+                        </div>
+                        <h3>“Oozes quality, one of the best I've seen</h3>
+                        <p>I'm not an operator, but can appreciate the versatility and use of this backpackLorem ipsum
+                            dolor sit amet, consectetur adipiscing elit. Morbi hendrerit risus elit, vitae fermentum
+                            elit molestie in...”</p>
+
+                        <p class="author">- First Tactical Customer</p>
+                    </summary>
+                    <img src="images/branding_reviews_product_bag.png">
+                    <button>Buy Now<span class="arrow"></span></button>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <section class="tagline">
+        <h2>Built to serve those who serve others</h2>
+    </section>
+</main>
+<footer>
+    <section>
+        <article class="newsletter">
+            <h3>Newsletter</h3>
+            <form>
+                <div class="tip">
+                    <input type="text" placeholder="Your Email Here"/>
+                    <div class="tooltip email_footer" style="display: none;">
+                        <div class="tool_arrow"></div>
+                        <p class="characters">Valid email address required</p>
+                    </div>
+                </div>
+                <button>Join</button>
+            </form>
+            <p>Sign up to receive emails on new product arrivals, special offers, and exclusive events.</p>
+        </article>
+        <article>
+            <ul>
+                <li><h3>Customer Assistance</h3></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Tel: 855.665.3410</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </article>
+        <article>
+            <ul>
+                <li><h3>Shipping</h3></li>
+                <li><a href="#">Order History</a></li>
+                <li><a href="#">Shipping Rates</a></li>
+                <li><a href="#">Warranty & Returns</a></li>
+            </ul>
+        </article>
+        <article>
+            <ul>
+                <li><h3>About Us</h3></li>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Find a Sales Rep</a></li>
+                <li><a href="#">Request a Catalog</a></li>
+            </ul>
+        </article>
+        <article class="social">
+            <ul>
+                <li><h3>Social</h3></li>
+                <li>
+                    <a href="#">
+                        <img alt="Facebook" class="icon-img" src="images/social-icon-facebook.png">
+                        <span class="icon-txt">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img alt="YouTube" class="icon-img" src="images/social-icon-youtube.png">
+                        <span class="icon-txt">YouTube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img alt="Instagram" class="icon-img" src="images/social-icon-instagram.png">
+                        <span class="icon-txt">Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img alt="Twitter" class="icon-img" src="images/social-icon-twitter.png">
+                        <span class="icon-txt">Twitter</span>
+                    </a>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <p class="copyright">
+        Copyright 2016, First Tactical <span class="mobile-hide">/</span><span class="mobile-show"><br></span>
+        <a href="/pages/faq?tabs=privacy">Privacy Policy</a> <span>/</span>
+        <a href="/pages/faq?tabs=privacy">Terms & Conditions</a>
+    </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+//Collection Page Overrides for Profession Collection
+.collection_override {
+    .main_container {
+        margin-top: 40px;
+        max-width: $inner-wrapper;
+        .main_contain {
+            background: none;
+            .main_col {
+                width: 100%;
+                .product_listing {
+                    margin-left: 0;
+                    width: 100%;
+                }
+                .product_card {
+                    width: calc((100% - 17px)/2);
+                    @media (min-width: $tablet) {
+                        width: calc((100% - 34px)/3);
+                    }
+                    @media (min-width: $laptop) {
+                        width: calc((100% - 51px)/4);
+                    }
+                    margin-right: 17px;
+                    margin-left: 0;
+                    box-shadow: none;
+                    &:nth-child(4n) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+#hotspot_quickview {
+    .qview-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    .result {
+        box-shadow: none;
+        max-width: 950px;
+        .product_img_slider {
+            width: 49%;
+        }
+    }
+}
+.fancybox-close {
+    right: 0;
+    top: -42px;
+}
+

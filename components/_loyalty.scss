@@ -1,0 +1,338 @@
+.customer #account .loyalty {
+    margin-bottom: 20px;
+}
+.customer #account #rewards, #rewards-2 {
+    width:100%;
+    background-color: #f5f5f5;
+    padding:15px;
+    text-align:center;
+    margin:25px auto;
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    .clearfix { display: inline-block; }
+    /* start commented backslash hack \*/
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+    /* close commented backslash hack */
+    .rewards-logo {
+        min-width:100%;
+        display:block;
+        clear:both;
+    }
+    img {
+        margin: 20px auto;
+        display:block;
+    }
+    h2 {
+        font-family: "FuturaStd-Light",Arial,"Helvetica Neue",Helvetica,sans-serif;
+        font-size: 18px;
+        letter-spacing: 5px;
+        text-align: center;
+        @media (min-width: $tablet) {
+            font-size: 24px;
+        }
+    }
+    h3 {
+        font-size: 18px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 200;
+        line-height: 1.1;
+        @media (min-width: $tablet) {
+            font-size: 24px;
+        }
+        em {
+            font-weight: 500;
+            font-style: italic;
+        }
+        .sweettooth-points-balance {
+            font-weight: 500;
+            line-height:36px;
+            font-size: 36px;
+            font-style: italic;
+        }
+        .tactix-points {
+            display:block;
+            color: #a19759;
+            margin-top: 0px;
+            font-size:16px;
+            line-height:16px;
+            font-size: 0.72em;
+            letter-spacing:2px;
+        }
+    }
+    .account-balance {
+        width:39%;
+        float:left;
+        margin:auto;
+        h3 {
+            line-height:24px;
+            padding:58px 0;
+            @media (max-width: $tablet) {
+                padding:15px 0;
+            }
+        }
+        @media (max-width: $tablet) {
+            width:100%;
+            display:block;
+        }
+    }
+
+    .redeem-points {
+        width:60%;
+        float:left;
+        margin:auto;
+        @media (max-width: $tablet) {
+            width:100%;
+            display:block;
+            margin:45px auto 25px;
+        }
+        ul {
+            margin: auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            vertical-align: top;
+            margin-bottom: 20px;
+            &:before {
+                display: table;
+                content: " ";
+            }
+            &:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+            figure {
+                img {
+                    max-width: 100%;
+                }
+            }
+            li {
+                display: inline-block;
+                width: 100%;
+                position: relative;
+                min-height: 1px;
+                box-sizing: border-box;
+                vertical-align: top;
+                @media (min-width: $tablet) {
+                    width: 32%;
+                }
+                p {
+                    display: block;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    -webkit-margin-before: 1em;
+                    -webkit-margin-after: 1em;
+                    -webkit-margin-start: 0px;
+                    -webkit-margin-end: 0px;
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+}
+#register-rewards {
+    background-color: #f5f5f5;
+    width:100%;
+    display:block;
+    text-align:center;
+    margin-top:25px;
+    padding:10px;
+    a.btn {
+        color:#333;
+        margin: 0 auto 25px;
+    }
+    img {
+        max-width:100%;
+        display:block;
+        margin:auto;
+    }
+    .rewards-logo {
+        margin:35px auto 25px;
+    }
+    p {
+        margin: 10px 0 25px;
+        padding: 0 10px;
+        font-size:0.9em;
+    }
+    h3 {
+        color: #a19759;
+        margin-top: 15px;
+        font-size: 0.72em;
+        letter-spacing:2px;
+    }
+    @media (min-width: $tablet) {
+        display:block;
+    }
+}
+#rewards {
+    width: calc(100% - 10px);
+    max-width: $wrapper;
+    margin: 0 auto;
+    .btn {
+        width: 300px;
+        margin: auto;
+        margin: 10 auto;
+        max-width:80%;
+        display: block;
+    }
+    section h2 {
+        font-family: "FuturaStd-Light",Arial,"Helvetica Neue",Helvetica,sans-serif;
+        font-size: 20px;
+        letter-spacing: 7px;
+        text-align: center;
+        margin: 6% auto;
+        @media (min-width: $tablet) {
+            font-size: 30px;
+        }
+    }
+    header {
+        @include transition(all 0.5s ease);
+        position: relative;
+        background-size: cover;
+        text-transform: uppercase;
+        min-height: 90px;
+        img {
+            width: 100%;
+            display: none;
+            @media (min-width: $tablet) {
+                display: block;
+            }
+        }
+        .details {
+            position: absolute;
+            top: 25%;
+            left: 8.33333333333333%;
+            max-width: $wrapper;
+            z-index: 555;
+            color: $text-dark-grey;
+            @media (min-width: $tablet) {
+                top:75%;
+                color: $white;
+                left: 0;
+                width: 100%;
+                text-align:center;
+            }
+            h3 {
+                font-family: $futura-light;
+                font-size: 13px;
+                @media (min-width: $tablet) {
+                    font-size: 1.695vw;
+                    line-height: 1.5vw;
+                }
+                @media (min-width: $wrapper) {
+                    font-size: 25px;
+                    line-height: 22px;
+                }
+            }
+            h2 {
+                font-family: $futura-heavy;
+                font-size: 31px;
+                display:block;
+                @media (min-width: $tablet) {
+                    font-size: 4.479vw;
+                    line-height: 4vw;
+                }
+                @media (min-width: $wrapper) {
+                    font-size: 63px;
+                    line-height: 58px;
+                }
+            }
+        }
+    }
+    .tactix-points {
+        display:block;
+        text-align:center;
+        width:100%;
+        margin: 30px 0;
+        vertical-align: top;
+
+        ul {
+            margin:auto;
+            display:block;
+            width:100%;
+            text-align:center;
+            vertical-align: top;
+            margin-bottom:20px;
+            &:before {
+                display: table;
+                content: " ";
+            }
+            &:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+            figure {
+                img {
+                    max-width:100%;
+                }
+            }
+            li {
+                display:inline-block;
+                width: 49%;
+                position: relative;
+                min-height: 1px;
+                box-sizing: border-box;
+                vertical-align: top;
+                @media (min-width: $tablet) {
+                    width: 24%;
+                }
+                h3 {
+                    font-size: 18px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    font-weight: 200;
+                    line-height: 1.1;
+                    @media (min-width: $tablet) {
+                        font-size: 24px;
+                    }
+                    em {
+                        font-weight:500;
+                        font-style: italic;
+                    }
+                }
+                p {
+                    display: block;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    -webkit-margin-before: 1em;
+                    -webkit-margin-after: 1em;
+                    -webkit-margin-start: 0px;
+                    -webkit-margin-end: 0px;
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+    .rewards-faq {
+        margin: 30px auto;
+        max-width:800px;
+        .question {
+            margin:25px 0 10px;
+        }
+        .answer {
+            margin:10px 0 25px;
+        }
+        .btn {
+            margin-top: 35px;
+        }
+    }
+}

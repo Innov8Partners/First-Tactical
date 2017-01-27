@@ -1,0 +1,455 @@
+/* Start First Tactical Footer CSS */
+footer {
+    width: 100%;
+    padding: 25px 10px 0;
+    font-family: $futura-light;
+    background-color: $off-white;
+
+    a {
+        text-decoration: none;
+        color: $text-dark-grey;
+        &:visited {
+            color: $text-dark-grey;
+        }
+        &:hover, &:active {
+            color: $light-blue;
+        }
+    }
+
+    section {
+        max-width: $wrapper;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        article {
+
+            h3 {
+                font-size: 18px;
+                line-height: 1;
+                font-family: $futura-heavy;
+                color: $text-mid-grey;
+                font-weight: normal;
+                letter-spacing: 1px;
+            }
+
+            &:nth-child(1) { /* newsletter */
+                width: 90%;
+                order: 5;
+                padding: 5%;
+
+                p {
+                    font-size: 15px;
+                    line-height: 1.5;
+                    margin-top: 8px;
+                    width: 100%;
+                }
+
+                form {
+                    margin-top: 10px;
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+
+                    input,
+                    button {
+                        font-size: 20px;
+                    }
+
+                    div.tip {
+                        /*position: relative;*/
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                            padding: 0 0 0 10px;
+                            font-family: $avenir-medium;
+                            line-height: 40px;
+                            background-color: $white;
+                            border: 1px solid $text-light-grey;
+                            color: $text-dark-grey;
+
+                            &.error {
+                                border-color: red !important;
+                                color: red !important;
+                            }
+                        }
+                        .tooltip.email_footer {
+                            position: absolute;
+                            top: 48px;
+                            left: 0;
+                            border-top: 6px solid $light-blue;
+                            background: $off-white;
+                            height: 46px;
+                            width: 100%;
+                            padding: 0 10px;
+                            box-shadow: 2px 2px 4px grey;
+
+                            .tool_arrow {
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 0 10px 15px 10px;
+                                border-color: transparent transparent $light-blue transparent;
+                                position: absolute;
+                                top: -15px;
+                                left: 20px;
+                            }
+
+                            p {
+                                width: auto;
+                            }
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 0;
+                        font-size: 20px;
+                        line-height: 38px;
+                        font-family: $avenir-bold;
+                        color: $light-blue;
+                        border: 2px solid $light-blue;
+                        background-color: transparent;
+                        margin-top: 10px;
+                        -webkit-transition: all .4s;
+                        transition: all .4s;
+
+                        &:hover {
+                            box-shadow: inset 0 100px 0 0 $light-blue;
+                            color: $off-white;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) { /* footer links */
+                text-transform: uppercase;
+
+                ul {
+                    padding: 10%;
+                    li {
+                        &:nth-child(1) {
+                            padding-bottom: 12px;
+                        }
+
+                        &:nth-child(n+2) {
+                            font-size: 14px;
+                            line-height: 1;
+                            padding-top: 15px;
+                        }
+                    }
+                }
+
+            }
+
+            &:nth-child(5) { /* social */
+
+                ul {
+
+                    li:first-child {
+                        display: block;
+                    }
+                    li:nth-child(n+1) {
+                        a {
+                            img {
+                                display: none;
+                            }
+                            span {
+                                display: inline;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                order: 5;
+                flex-basis: 90%;
+                width: 90%;
+            }
+
+            &:nth-child(2) {
+                order: 1;
+                flex-basis: 40%;
+            }
+
+            &:nth-child(3) {
+                order: 2;
+                flex-basis: 40%;
+            }
+
+            &:nth-child(4) {
+                order: 3;
+                flex-basis: 40%;
+            }
+
+            &:nth-child(5) {
+                order: 4;
+                flex-basis: 40%;
+            }
+        }
+
+    }
+
+    $line-height: 20px;
+    p.copyright {
+        font-size: 13px;
+        text-align: center;
+        line-height: $line-height;
+        border-top: 1px solid $text-light-grey;
+        padding: 18px 0;
+
+        span {
+            font-size: 130%;
+            line-height: $line-height;
+            padding: 0 4px;
+            position: relative;
+            top: 1px;
+        }
+        .mobile-show {
+            display: inline;
+        }
+    }
+}
+
+@media (min-width:$tablet) {
+
+    footer {
+        height: 298px;
+
+        section {
+            display: block; /* turn off flex */
+            height: 221px;
+            width: 100%;
+            max-width: $wrapper;
+            position: relative;
+
+            article {
+                display: inline-block;
+                vertical-align: top;
+
+                h3 {
+                    margin-top: 4px;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                }
+
+                &:nth-child(1) { /* newsletter */
+                    padding: 0;
+
+                    h3, form, p {
+                        width: 100%;
+                    }
+
+                    form {
+
+                        input,
+                        button {
+                            font-size: 16px;
+                        }
+
+                        div.tip {
+                            width: 72%;
+
+                            .tooltip.email_footer {
+                                /*width: 420px;*/
+                            }
+                        }
+
+                        button {
+                            width: 23%;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            margin-top: 0;
+                        }
+                    }
+                }
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) { /* footer links */
+
+                    padding-left: 2%;
+
+                    ul {
+                        padding: 0;
+
+                        li {
+                            &:nth-child(1) {
+                                padding-bottom: 12px;
+                            }
+
+                            &:nth-child(n+2) {
+                                font-size: 14px;
+                                padding-top: 15px;
+                            }
+                        }
+                    }
+
+                }
+
+                &:nth-child(5) { /* social links */
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    ul {
+                        padding: 0;
+
+                        li:nth-child(1) {
+                            display: none;
+                        }
+                        li:nth-child(n+2) {
+                            display: inline-block;
+                            margin: 0 0 9px 9px;
+                            padding: 0;
+
+                            a {
+                                img {
+                                    display: block;
+                                    transition: all 0.4s;
+                                    &:hover {
+                                        -ms-transform: scale(1.1,1.1);
+                                        -webkit-transform: scale(1.1,1.1);
+                                        transform: scale(1.1,1.1);
+                                    }
+                                }
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                &:nth-child(1) {
+                    width: 30%;
+                }
+                &:nth-child(2) {
+                    width: 19%;
+                    margin-left: 2%;
+
+                }
+                &:nth-child(3) {
+                    width: 19%;
+                }
+                &:nth-child(4) {
+                    width: 17%;
+                }
+                &:nth-child(5) {
+                    width: 52px;
+                }
+            }
+        }
+
+
+        p.copyright {
+            width: 100%;
+            line-height: 50px;
+            padding: 0;
+
+            .mobile-hide {
+                display: inline;
+            }
+            .mobile-show {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width:$laptop) {
+
+    footer {
+
+        section {
+
+            article {
+
+                &:nth-child(1) { /* newsletter */
+                    width: 34%;
+                    height: 165px;
+                    border-right: 1px solid $text-light-grey;
+
+                    form {
+                        height: 42px;
+                        width: 90%;
+                        margin-top: 30px;
+
+                        input,
+                        button {
+                            font-size: 20px;
+                        }
+
+                        input {
+                            width: 72%;
+                            float: left;
+                        }
+                        button {
+                            width: 23%;
+                            float: right;
+                            margin-top: 0;
+                        }
+                    }
+                    p {
+                        width: 90%;
+                        margin-top: 8px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    width: 15%;
+
+                }
+                &:nth-child(3) {
+                    width: 18%;
+                }
+                &:nth-child(5) {
+                    width: 100px;
+                    ul {
+                        li {
+                            float: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $inner-wrapper) {
+    footer {
+        section {
+            article {
+                &:nth-child(1) {
+                    p {
+                        width: 65%;
+                    }
+                }
+                &:nth-child(2) {
+                    width: 18%;
+                }
+                &:nth-child(3) {
+                    width: 14%;
+                }
+                &:nth-child(4) {
+                    width: 13%;
+                }
+                &:nth-child(5) {
+                    width: 215px;
+                }
+            }
+        }
+    }
+}
+
+
+/* End First Tactical Footer CSS */

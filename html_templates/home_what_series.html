@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Tactical</title>
+    <link media="all" href="../first_tactical.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.shopify.com/s/files/1/1125/0762/t/3/assets/jquery.bxslider.css?8409654178526201762" rel="stylesheet" type="text/css"  media="all"  />
+
+    <script src="https://cdn.shopify.com/s/files/1/1125/0762/t/3/assets/jquery-1.11.2.js?8409654178526201762" type="text/javascript"></script>
+    <script src="https://cdn.shopify.com/s/files/1/1125/0762/t/3/assets/jquery.bxslider.min.js?8409654178526201762" type="text/javascript"></script>
+</head>
+<body>
+<main id="home">
+    <section class="hero">
+        <div class="slider">
+            <ul>
+                <li class="what-series">
+                    <img src="https://cdn.shopify.com/s/files/1/1125/0762/files/home_banner_what_series.jpg?3815911265165180050" class="desktop">
+                    <img src="https://cdn.shopify.com/s/files/1/1125/0762/files/home_banner_what_series_mobile.jpg?3815911265165180050" class="mobile">
+                    <div class="details">
+                        <div class="left">
+                            <p><span class="desktop">First Tactical's Tactix Series products are designed to with countless innovative features and aim to be the perfect tactical tool while on the job. </span>Made tough, flexible and durable the Tactix Series provides the perfect tactical companions.</p>
+                            <a class="btn white-outline" href="/collections/tactix-series">Learn More<span class="arrow"></span></a>
+                        </div>
+                        <div class="right">
+                            <p>First Tactical's Specialist Series products are designed to be a simplified version of the Tactix Series.<span class="desktop"> Items are designed with a more traditional approach and boast amazing prices.</span></p>
+                            <a class="btn white-outline" href="/collections/specialist-series">Learn More<span class="arrow"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/hero_parka.jpg">
+                    <div class="details">
+                        <h3>Designed to move and breathe</h3>
+                        <h2>Tactix Series System Parka</h2>
+                        <p>100% waterproof, breathable, fully seam-sealed wind resistant nylon outer shell and a zip-in SoftShell gives this jacket the edge you need in the field.</p>
+                        <a class="btn" href="#">Shop Now<span class="arrow"></span></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $('.hero .slider ul').bxSlider({
+                mode: 'horizontal',
+                captions: true,
+                //auto: true,
+                pause: 7000,
+                pager: false,
+                adaptiveHeight: true,
+                touchEnabled:false
+            });
+        </script>
+    </section>
+</main>
+</body>
+</html>

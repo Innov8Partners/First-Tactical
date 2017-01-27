@@ -1,0 +1,391 @@
+{% assign show_header_footer = true %}
+
+{% if is_partner and requires_login %}
+{% assign show_header_footer = false %}
+
+{% if customer %}
+{% assign show_header_footer = show_header_footer_on_login %}
+{% endif %}
+{% endif %}
+
+
+
+<header id="header" {% if is_checkout %}class="checkout"{% endif %}>
+    <section {% if is_partner %}class="has-partner-name"{% endif %}>
+
+        {% if show_header_footer %}
+
+        <article class="top-left">
+            <button type="button" class="tcon tcon-menu--xbutterfly" aria-label="toggle menu">
+                <span class="tcon-menu__lines" aria-hidden="true"></span>
+                <span class="tcon-visuallyhidden">toggle menu</span>
+            </button>
+
+            {% if is_partner and partner_our_story %}
+            <div class="our-mission"><a class="anchor-btn" href="{{ site_url }}{{ partner_our_story }}">{{ 'header.our_story' | t }}</a></div>
+            {% else %}
+            <div class="our-mission"><a class="anchor-btn" href="/pages/our-story">{{ 'header.our_story' | t }}</a></div>
+            {% endif %}
+
+            {% unless is_partner %}
+            <div id="country-switcher" class="dropdown">
+                <a href="#" class="anchor-btn">US&nbsp;&nbsp;<img src="{{ 'flag-icon-us.jpg' | asset_url }}"><span>&#709;</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">US <img src="{{ 'flag-icon-us.jpg' | asset_url }}"></a></li>
+                    <li><a href="http://www.firsttactical.co.uk">UK <img src="{{ 'flag-icon-uk.jpg' | asset_url }}"></a></li>
+                </ul>
+            </div>
+            {% endunless %}
+        </article>
+
+        {% endif %}
+        <article class="top-mid logo">
+            <a title="Home" href="{{ site_url }}/">
+                <img src="{{ 'logo.png' | asset_url }}" alt="First Tactical" />
+                {% unless partner_name == blank %}
+                <p style="margin-top: 2%; font-family: 'FuturaStd-Heavy',Arial,'Helvetica Neue',Helvetica,sans-serif; color: {{ partner_name_color }}">{{ partner_name }}</p>
+                {% endunless %}
+            </a>
+        </article>
+
+        {% if show_header_footer %}
+
+        <article class="top-right">
+            <div class="search_box">
+                <a class="anchor-btn" href="javascript:void(0)">
+                    <img src="{{ 'icon-search-grey2.png' | asset_url }}" />
+                    <span class="txt tablet-show">{{ 'common_terms.search' | t }}</span>
+                </a>
+                <form action="{{ site_url }}/search">
+                    <input title="Press enter to search" class="anchor-popup" type="search" placeholder="Search" name="q">
+                    <input type="hidden" value="product" name="type">
+                </form>
+            </div>
+
+
+            {% if is_checkout %}
+            <div class="login_box" id="login_box">
+                {% if customer %}
+                <a class="anchor-btn" href="{{ site_url }}/account">
+                    <img src="{{ 'icon-user-grey2.png' | asset_url }}" alt="user" />
+                    <span class="txt tablet-show">{{ customer.first_name | truncate: 8 }}</span>
+                </a>
+                {% else %}
+                <a class="anchor-btn" href="{{ site_url }}/account/login">
+                    <img src="{{ 'icon-user-grey2.png' | asset_url }}" alt="user" />
+                    <span class="txt tablet-show">{{ 'account.login' | t }}</span>
+                </a>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="login_box" id="login_box">
+                {% if customer %}
+                <a class="anchor-btn" id="login" href="/account">
+                    <img src="{{ 'icon-user-grey2.png' | asset_url }}" alt="user" />
+                    <span class="txt tablet-show" id="name">{{ customer.first_name | truncate: 8}}</span>
+                </a>
+                {% else %}
+                <a class="anchor-btn" id="login" href="javascript:void(0)">
+                    <img src="{{ 'icon-user-grey2.png' | asset_url }}" alt="user" />
+                    <span class="txt tablet-show" id="name">{{ 'account.login' | t }}</span>
+                </a>
+                <!-- Login pop up Start -->
+                <div class="login anchor-popup">
+                    <div id="customer">
+                        <p class="save_info">{{ 'account.login' | t }}</p>
+                        {% form 'customer_login' %}
+                        <input type="hidden" value="customer_login" name="form_type" />
+                        <input type="hidden" name="return_to" value="/" />
+                        <input type="hidden" name="utf8" value="✓" />
+                        <ul class="loginForm">
+                            <li id="loginField">
+                                <label class="text" for="customer_email">{{ 'account.email' | t }}</label>
+                                <input id="customer_email" maxlength="255" name="customer[email]"
+                                       value="" class="email" type="text" required/>
+                            </li>
+                            <li id="passwordField">
+                                <label class="text" for="customer_password">{{ 'account.password.password' | t }}</label>
+                                <input id="customer_password" name="customer[password]" value="" class="password" type="password" autocomplete="off" required/>
+                            </li>
+                            <li>
+                                <div class="account-links">
+                                    <div id="errors" style="display:none;"></div>
+                                    <input id="sign_in" alt="Login" value="Login" class="login_btn" type="submit"/>
+                                    <a class="account-link" href="/account/login#recover">{{ 'account.password.forgot' | t }}</a>
+                                    <a class="account-link" title="New User?" href="/account/register">{{ 'account.new_user' | t }}</a>
+                                </div>
+                            </li>
+                        </ul>
+                        {% endform %}
+                    </div>
+                </div>
+                <!-- Login pop up End -->
+                {% endif %}
+            </div>
+            {% endif%}
+
+            <div class="cart_box">
+                <a class="anchor-btn" href="javascript:void(0)">
+                    <img src="{{ 'icon-cart-grey2.png' | asset_url }}" alt="cart">
+                    {% assign cart_count = 0 %}
+                    <span class="txt tablet-show">{{ 'common_terms.cart' | t }} </span>[<span class="item" id="cartCount">{% if is_checkout %}{{ checkout.item_count }}{% else %}{{ cart.item_count }}{% endif %}</span>]
+                </a>
+                <!-- Mini Cart Start -->
+                <div class="mini_cart anchor-popup" id="mini_cart" >
+                    <p class="items">
+                        {% if is_checkout %}
+                        {{ 'header.your_cart' | t }} <span id="cart_item_count">({{ checkout.line_items.size }} item{% if checkout.line_items.size > 1 %}s{% endif %})</span>
+                        {% else %}
+                        {{ 'header.your_cart' | t }} <span id="cart_item_count">({{ cart.item_count }} item{% if cart.item_count > 1 %}s{% endif %})</span>
+                        {% endif %}
+                    </p>
+
+                    {% if is_checkout %}
+                    {% assign line_items = checkout.line_items %}
+                    {% else %}
+                    {% assign line_items = cart.items %}
+                    {% endif %}
+
+                    <div id="cart_items"{% if line_items.size > 3 %}class="overflow"{% endif %}>
+                        {% for item in line_items %}
+                        <div class="item_box">
+                            <img src="{{ item.image |  img_url: 'medium' }}" />
+                            <div class="item_size">
+                                <h4 class="item_title">{{ item.product.title | split: ' / ' | first }}</h4>
+
+                                {% assign bundle_product1 = item.properties['Product 1 '] | replace: 'Name: ' %}
+                                {% assign bundle_product2 = item.properties['Product 2 '] | replace: 'Name: '  %}
+                                {% assign bundle_product3 = item.properties['Product 3 '] | replace: 'Name: '  %}
+
+                                {% unless bundle_product2 == blank and bundle_product3 == blank %}
+                                {% if bundle_product1 %}
+                                <p>{{ bundle_product1 }}</p>
+                                {% endif %}
+                                {% if bundle_product2 %}
+                                <p>{{ bundle_product2 }}</p>
+                                {% endif %}
+                                {% if bundle_product3 %}
+                                <p>{{ bundle_product3 }}</p>
+                                {% endif %}
+                                {% else %}
+                                {% for option in item.product.options %}
+                                <p>{{ option }}: {{ item.variant.options[forloop.index0] }}</p>
+                                {% endfor %}
+                                {% endunless %}
+
+                                {% assign property_size = item.properties | size %}
+                                {% assign is_free_item = false %}
+
+                                {% if property_size > 0 %}
+                                {% for p in item.properties %}
+                                {% unless p.first contains 'Product' %}
+                                {% unless p.last == blank and p.last == 'promo.free' %}
+                                <p>{{ p.first }}: {{ p.last }}</p>
+                                {% else %}
+                                {% assign is_free_item = true %}
+                                {% endunless %}
+                                {% endunless %}
+                                {% endfor %}
+                                {% endif %}
+
+
+                                <p>{{ 'header.qty' | t }} {{ item.quantity }}</p>
+
+                                {% if is_free_item %}
+                                <p class="price">{{ 'header.price_free' | t }}</p>
+                                {% else %}
+                                <p class="price">{{ 'header.price' | t }} {{ item.line_price | money | replace: ' ','' }}</p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="item_box">
+                        <div class="button_block">
+                            <a class="btn" href="{{ site_url }}/cart">
+                                <span class="right_arrow">{{ 'buttons.view_cart' | t }}</span>
+                            </a>
+                        </div>
+                        <div class="clear"></div>
+                        <p class="shipping">{{ 'header.minicart_bottom_text' | t }}</p>
+                    </div>
+                </div>
+                <!-- Mini Cart End -->
+            </div>
+        </article>
+        {% endif %}
+    </section>
+
+    {% unless is_checkout or show_header_footer == false %}
+    <nav id="nav">
+        <div id="mobile-nav-top-bar"></div>
+        <ul>
+
+            {% if alternate_navigation == blank %}
+            {% assign link_list = linklists.main-menu.links %}
+            {% else %}
+            {% assign link_list = linklists[alternate_navigation].links %}
+            {% endif %}
+
+            {% for link in link_list %}
+
+            {% if link.object.handle == blank %}
+            {% assign link_handle = link.handle %}
+            {% else %}
+            {% assign link_handle = link.object.handle  %}
+            {% endif %}
+
+            {% assign show_nav_link = true %}
+
+            {% assign link_url = link.url %}
+            {% assign link_title = link.title %}
+
+            {% if is_partner %}
+            {% include 'partners_navigation' %}
+            {% endif %}
+
+            {% if show_nav_link %}
+
+            {% capture ad_text %}{{ link_handle | append: '_ad_text' }}{% endcapture %}
+            {% capture ad_subtext %}{{ link_handle | append: '_ad_sub_text' }}{% endcapture %}
+            {% capture ad_href %}{{ link_handle | append: '_ad_url' }}{% endcapture %}
+
+            {% if link_handle == 'all' %}
+
+            {% assign blogList = 'training,press-room,off-the-clock' | split:',' %}
+
+            {% assign articleList = false %}
+
+            {% for blog in blogList %}
+            {% if blogs[blog].articles %}
+            {% if articleList %}
+            {% assign articleList = articleList | concat:blogs[blog].articles %}
+            {% else %}
+            {% assign articleList = blogs[blog].articles %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% if articleList %}
+            {% assign articleList = articleList | sort:'published_at' | reverse %}
+            {% endif %}
+            {% capture nav_image %}{{ articleList[0].image | img_url: '357x239', crop: 'center' }}{% endcapture %}
+            {% else %}
+            {% unless settings[ad_text] == '' %}
+            {% capture nav_image %}{{ link.handle | append:'-dropdown.jpg' | asset_url }}{% endcapture %}
+            {% endunless %}
+            {% endif %}
+
+            {% if show_dropdowns %}
+            <style>
+                .bg-{{ link_handle }} { background: rgba(0, 0, 0, 0) url({{ nav_image }}) no-repeat -9999px -9999px; }
+            </style>
+            {% endif %}
+
+            <li class="bg-{{ link_handle }}">
+                <a href="{{ site_url }}{{ link.url }}">{{ link.title }}</a>
+
+                {% if show_dropdowns %}
+                <ul {% unless settings[ad_text] == '' or show_nav_ads == false %}class="has-nav-image"{% endunless %}{% if link_handle == 'blog' %}class="has-nav-image"{% endif %}>
+
+                {% if link_handle == 'all' %}
+            <li><span>Read More</span></li>
+            {% else %}
+            <li><span>Shop Now</span></li>
+            {% endif %}
+
+            {% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}
+            {% for l in linklists[link_handle].links %}
+
+            {% assign show_nav_link = true %}
+
+            {% if excluded_collections contains l.object.handle %}
+            {% assign show_nav_link = false %}
+            {% endif %}
+
+            {% if show_nav_link %}
+            {% if l.type == 'relative_link' %}
+            <li>{{ l.title }}</li>
+            {% elsif l.type == 'page_link' %}
+            <li><span class="sub_text">{{ l.title }}</span> [ <a title="{{ 'buttons.learn_more' | t }}" href="{{ site_url }}{{ l.url }}">{{ 'bottons.learn_more' | t }}</a>]</li>
+            {% else %}
+            <li class="{{ l.handle }}"><a href="{{ site_url }}{{ l.url }}">{{ l.title }}</a></li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {% else %}
+            <li><a href="{{ site_url }}{{ link.url }}">{{ link.title }}</a></li>
+            {% endif %}
+
+            {% if link_handle == 'all' %}
+            <li class="nav-image">
+                <a href="{{ site_url }}{{ articleList[0].url }}" style="background: rgba(0, 0, 0, 0) url({{ nav_image }}) no-repeat scroll center top">
+                    <p>{{ articleList[0].title }}</p>
+                    <div class="learn_more">Read More</div>
+                </a>
+            </li>
+            {% else %}
+            {% unless settings[ad_text] == '' or show_nav_ads == false %}
+            <li class="nav-image">
+                <a href="{{ site_url }}{{ settings[ad_href] }}" style="background: rgba(0, 0, 0, 0) url({{ nav_image }}) no-repeat scroll center top">
+                    <p>{{ settings[ad_text] }}</p>
+                    <div class="learn_more">{{ settings[ad_subtext] }}</div>
+                </a>
+            </li>
+            {% endunless %}
+            {% endif %}
+
+        </ul>
+        {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        {% if off_duty_menu.size > 0 %}
+        <li>
+            <a href="{{ site_url }}/collections/off-duty">Off-Duty</a>
+            <ul>
+                <li><span>Shop Now</span></li>
+                {% for l in linklists[off_duty_menu].links %}
+                {% unless l.title == 'Blog' or l.title == 'Womens' %}
+                <li><a href="{{ site_url }}{{ l.url }}?view=off-duty">{{ l.title }}</a></li>
+                {% endunless %}
+                {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+        </ul>
+    </nav>
+    {% endunless %}
+
+    {% if show_free_shipping %}
+    {{ settings.ribbon_text }}
+    {{ settings.ribbon_popup }}
+    {% endif %}
+
+
+    {% unless is_checkout or show_professions_menu == false %}
+    {% if template contains 'collection' or template contains 'index' %}
+    <nav class="nav-professions">
+        <ul>
+            <li><a href="{{ site_url }}/collections/le">{{ 'common_terms.law_enforcement' | t }}</a></li>
+            <li><a href="{{ site_url }}/collections/fire">{{ 'common_terms.fire' | t }}</a></li>
+            <li><a href="{{ site_url }}/collections/ems">{{ 'common_terms.ems' | t }}</a></li>
+        </ul>
+    </nav>
+    {% endif %}
+    {% endunless %}
+
+    {%if template contains 'blog' or template contains 'article' %}
+    {% unless blog.title == 'Instructions' or blog.title == 'Videos' %}
+    <nav class="subheader">
+        <ul class="submenu">
+            {% for l in linklists['all'].links %}
+            <li class="submenu__item{% if blog.url == l.url %} active{% endif %}"><a href="{{ site_url }}{{ l.url }}">{{ l.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endunless %}
+    {% endif %}
+</header>

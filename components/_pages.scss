@@ -1,0 +1,1386 @@
+// Profession Specific Landing Pages
+.page {
+    width: calc(100% - 10px);
+    max-width: $wrapper;
+    margin: 0 auto;
+}
+
+#profession {
+    width: calc(100% - 10px);
+    max-width: $wrapper;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    section.hero {
+        position: relative;
+        @media (min-width: $tablet) {
+            @include wrap-stuff;
+        }
+        .left {
+            width: 100%;
+            overflow: hidden;
+            @media (min-width: $tablet) {
+                width: 74%;
+            }
+            img {
+                width: 100%;
+                &.desktop {
+                    display: none;
+                    @media (min-width: $tablet) {
+                        display: block;
+                    }
+                }
+                &.mobile {
+                    display: block;
+                    @media (min-width: $tablet) {
+                        display: none;
+                    }
+                }
+            }
+            .caption {
+                color: $text-white;
+                position: absolute;
+                top: 0;
+                z-index: 555;
+            }
+            p {
+                max-width: 575px;
+                line-height: 14px;
+                display: none;
+                @media (min-width: $mobile-wide) {
+                    display: block;
+                }
+            }
+            a {
+                width: 50%;
+                max-width: 175px;
+            }
+        }
+        // Law Enforcement landing page specific styles
+        &.le {
+            .left{
+                text-align: center;
+                .caption {
+                    width: 100%;
+                    margin: 10% auto;
+                    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+                    @media (min-width: $tablet) {
+                        margin-top: 27%;
+                        width: 74%;
+                    }
+                    @media (min-width: $laptop) {
+                        margin-top: 37%;
+                    }
+                }
+                p {
+                    margin: 2% auto;
+                    width: 80%;
+                    @media (min-width: $mobile-wide) {
+                        line-height: 16px;
+                    }
+                    @media (min-width: $tablet) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+                a {
+                    margin: 0 auto;
+                    text-shadow: none;
+                }
+                h2 {
+                    @media (min-width: $mobile-wide) {
+                        font-size: 39px;
+                        line-height: 39px;
+                    }
+                    @media (min-width: $tablet) {
+                        font-size: 60px;
+                        line-height: 60px;
+                    }
+                    @media (min-width: $laptop) {
+                        font-size: 70px;
+                        line-height: 70px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        font-size: 80px;
+                    }
+                }
+            }
+        }
+        // Fire landing page specific styles
+        &.fire {
+            .left {
+                text-align: right;
+                .caption {
+                    margin-top: 4%;
+                    right: 5%;
+                    width: 49%;
+                    @media (min-width: $tablet) {
+                        margin-top: 10%;
+                        right: 30%;
+                        width: 26%;
+                    }
+                }
+                h2 {
+                    font-size: 26px;
+                    line-height: 26px;
+                    @media (min-width: $laptop) {
+                        font-size: 54px;
+                        line-height: 54px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        font-size: 70px;
+                        line-height: 70px;
+                    }
+                }
+                p {
+                    line-height: 16px;
+                    @media (min-width: $tablet) {
+                        width: 83%;
+                        margin-left: 17%;
+                    }
+                    @media (min-width: $laptop) {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+                }
+                a {
+                    float: right;
+                    min-width: 175px;
+                    margin-top: 10px;
+                    border-bottom: 2px solid $dark-blue;
+                }
+            }
+        }
+        // EMS landing page specific styles
+        &.ems {
+            .left {
+                text-align: right;
+                .caption {
+                    margin-top: 4%;
+                    right: 5%;
+                    width: 60%;
+                    @media (min-width: $mobile-wide) {
+                        width: 66%;
+                    }
+                    @media (min-width: $tablet) {
+                        margin-top: 10%;
+                        right: 30%;
+                        width: 45%;
+                    }
+                }
+                h2 {
+                    font-size: 26px;
+                    @media (min-width: $mobile-wide) {
+                        font-size: 52px;
+                        padding-bottom: 2%;
+                    }
+                    @media (min-width: $tablet) {
+                        font-size: 45px;
+                        padding-bottom: 3%;
+                    }
+                    @media (min-width: $laptop) {
+                        font-size: 60px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        font-size: 80px;
+                    }
+                }
+                p {
+                    display: block;
+                    line-height: 16px;
+                    width: 88%;
+                    margin-left: 12%;
+                    font-size: 13px;
+                    @media (min-width: $mobile-wide) {
+                        width: 74%;
+                        margin-left: 26%;
+                        padding-bottom: 2%;
+                        line-height: 17px;
+                    }
+                    @media (min-width: $tablet) {
+                        width: 66%;
+                        margin-left: 34%;
+                        padding-bottom: 3%;
+                    }
+                    @media (min-width: $laptop) {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+                    .desktop {
+                        display: none;
+                        @media (min-width: $mobile-wide) {
+                            display: inline
+                        }
+                    }
+                }
+                a {
+                    float: right;
+                    min-width: 175px;
+                    margin-top: 10px;
+                }
+            }
+        }
+        // Women's landing page specific styles
+        &.womens {
+            .left {
+                text-align: left;
+                .caption {
+                    text-shadow: none;
+                    margin-left: 3%;
+                    margin-top: 15%;
+                    @media (min-width: $tablet) {
+                        margin-top: 22%;
+                    }
+                    @media (min-width: $laptop) {
+                        margin-top: 32%;
+                    }
+                    h2 {
+                        @media (min-width: $laptop) {
+                            font-size: 75px;
+                        }
+                    }
+                }
+                p {
+                    margin: 2% 0;
+                    width: 58%;
+                    @media (min-width: $tablet) {
+                        width: 47%;
+                    }
+                    @media (min-width: $laptop) {
+                        width: 38%;
+                    }
+                }
+                a {
+                    margin: 0;
+                }
+            }
+        }
+
+
+        .right {
+            width: 100%;
+            overflow: hidden;
+            @media (min-width: $tablet) {
+                width: 26%;
+            }
+            @media (max-width: $tablet) {
+                background: none !important;
+                @include wrap-stuff;
+            }
+            .block {
+                position: relative;
+                vertical-align: bottom;
+                width: 50%;
+                @media (min-width: $tablet) {
+                    flex-direction: column;
+                    margin-top: 0;
+                    width: 100%;
+                }
+            }
+            img {
+                width: 100%;
+                display: block;
+                max-width: none;
+                @media (min-width: $tablet) {
+                    width: 150%;
+                    margin-left: -25%;
+                    margin-top: -2px;
+                }
+            }
+            a {
+                color: $white;
+                font-family: $futura-heavy;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                @media (min-width: $tablet) {
+                    font-size: 19px;
+                }
+                @media (min-width: $laptop) {
+                    font-size: 1.2vw;
+                }
+                @media (min-width: $wrapper) {
+                    font-size: 19px;
+                }
+            }
+            .arrow {
+                //background: url(html_templates/images/btn_arrow_right_white.png) right center no-repeat;
+                background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+                padding-right: 23px;
+                @media (min-width: $tablet) {
+                    padding-right: 10%;
+                }
+            }
+            .tab {
+                background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+                bottom: 0;
+                display: block;
+                position: absolute;
+                width: 100%;
+                z-index: 555;
+                padding: 10px;
+                @media (min-width: $tablet) {
+                    bottom: 0;
+                }
+            }
+            .mobile {
+                display: inline-block;
+                @media (min-width: $laptop) {
+                    display: none;
+                }
+            }
+            .desktop {
+                display: none;
+                @media (min-width: $laptop) {
+                    display: inline-block
+                }
+
+            }
+        }
+    }
+    section.description {
+        text-align: center;
+        color: $text-dark-grey;
+        margin: 5% auto;
+        width: 90%;
+        h3 {
+            font-size: 40px;
+            font-family: $futura-heavy;
+        }
+        p {
+            font-family: $futura-light;
+            font-size: 17px;
+            max-width: 811px;
+            margin: 1% auto;
+
+        }
+    }
+    section.hotspots {
+        position: relative;
+        img {
+            position: relative;
+            width: 100%;
+            z-index: 100;
+        }
+        area {
+            z-index: 102;
+        }
+        .float-hotspot {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 101;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            font-family: $futura-condensed-bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-align: center;
+            @media (min-width: $tablet) {
+                font-size: 14px;
+            }
+        }
+        span {
+            display: block;
+            font-weight: normal;
+            font-family: $futura-light;
+            font-size: 12px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+    }
+
+    section.categories {
+        margin-top: 14px;
+        ul {
+            @include wrap-stuff;
+        }
+        li {
+            @include transition(all 0.5s ease);
+            position: relative;
+            width: 49.5%;
+            margin-right: 1%;
+            @media (min-width: $tablet) {
+                width: 32.66666666666667%;
+            }
+            &:nth-child(2n) {
+                margin-right: 0;
+                @media (min-width: $tablet) {
+                    margin-right: 1%;
+                }
+            }
+            &:nth-child(3n) {
+                @media (min-width: $tablet) {
+                    margin-right: 0;
+                }
+            }
+        }
+        img {
+            width: 100%;
+            margin-bottom: 2%;
+        }
+        p {
+            color: $white;
+            font-family: $futura-condensed-bold;
+            font-size: 19px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom: 17px;
+            left: 12px;
+            z-index: 556;
+            text-shadow: 0 0 12px rgba(0, 0, 0, 0.51);
+            @media (min-width: $mobile-wide) {
+                font-size: 23px;
+            }
+        }
+        .desktop {
+            display: none;
+            @media (min-width: $mobile-wide) {
+                display: inline-block;
+            }
+        }
+        .arrow {
+            //background: url(html_templates/images/btn_arrow_right_white.png) right center no-repeat;
+            background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+            padding-right: 23px;
+        }
+    }
+}
+
+// Embellishment / Embroidery hotspot form popup for Fire specific landing page
+#hotspot_form {
+    width: 95%;
+    max-width: 640px;
+    padding: 40px 13%;
+    .header {
+        text-align: center;
+    }
+    h2 {
+        font-family: $futura-condensed-bold;
+        font-size: 21px;
+        color: $ft-green;
+        text-transform: uppercase;
+    }
+    h3 {
+        font-family: $futura-light;
+        font-size: 45px;
+        color: $text-dark-grey;
+        text-transform: uppercase;
+    }
+    p {
+        font-family: $futura-light;
+        color: $text-mid-grey;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .form {
+        min-height: 500px;
+    }
+    .footer {
+        h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: $text-dark-grey;
+            font-size: 13px;
+        }
+    }
+}
+
+#catalog-request {
+    @include wrap-stuff;
+    margin-top: 2%;
+    section.full {
+        width: 100%;
+        h1 {
+            font-family: $futura-light;
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+        hr {
+            border-bottom: 1px solid $border-grey;
+            padding-top: 22px;
+            margin-bottom: 22px;
+        }
+        p {
+            font-family: $futura-light;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 20px;
+        }
+        .required {
+            color: $text-light-mid-grey;
+        }
+    }
+    section.left {
+        width: 100%;
+        @media (min-width: $tablet) {
+            width: 45%;
+            padding-right: 5%;
+            border-right: 1px solid $border-grey;
+        }
+    }
+    section.right {
+        display: none;
+        @media (min-width: $tablet) {
+            width: 55%;
+            padding-left: 5%;
+            display: block;
+        }
+        h2 {
+            font-family: $futura-light;
+            font-size: 20px;
+            margin-left: 15px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+/*****************************************
+* START OUR STORY LANDING PAGE
+******************************************/
+
+main#our-story {
+    margin: 0 auto;
+    color: $text-dark-grey;
+    h2 {
+        font: 42px/1 $futura-condensed-bold;
+    }
+    section.video {
+        max-width: $wrapper;
+        width: 100%;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0 auto;
+        @media (min-width: $wrapper) {
+            width: $wrapper;
+            height: 810px;
+            padding-bottom: 0;
+        }
+        iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    section.email-signup {
+        width: 100%;
+        background-color: $white;
+        text-align: center;
+        margin: 0 auto;
+        padding: 65px 0 77px;
+        h2 {
+            font: 36px/1 $futura-condensed-bold;
+            margin: 0;
+            @media (min-width: $mobile) {
+                font-size: 42px;
+            }
+        }
+        p {
+            font: 18px/1.3 $futura-light;
+            margin: 13px auto 0;
+            width: 95%;
+            max-width: 825px;
+        }
+        div.email-input {
+            width: 80%;
+            max-width: 720px;
+            margin: 33px auto 0;
+            @media (min-width: $mobile) {
+                width: 87%;
+                display: flex;
+                justify-content: space-between;
+            }
+            input {
+                border: 1px solid $border-grey;
+                background: $light-grey;
+                font: 14px $futura-light;
+                line-height: 39px;
+                height: 39px;
+                padding-left: 13px;
+                width: 100%;
+                color: $text-light-mid-grey;
+                @media (min-width: $mobile) {
+                    width: 70.5%;
+                }
+            }
+            button {
+                line-height: 39px;
+                height: 39px;
+                width: 100%;
+                font: 14px $futura-heavy;
+                background: $light-blue;
+                color: $text-white;
+                &:hover {
+                    background: $hover-blue;
+                }
+                @media (min-width: $mobile) {
+                    width: 26%;
+                }
+            }
+        }
+    }
+
+    section#parallax {
+        .gap {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            @media (min-width: $mobile) {
+                background-size: auto 174%;
+            }
+            @media (min-width: $tablet) {
+                background-size: cover;
+                height: 0;
+                padding-bottom: 45.69%;
+            }
+            div.txt {
+                max-width: 740px;
+                text-align: center;
+                padding: 8% 4% 0;
+                text-shadow: 1px 1px 4px black;
+                @media (min-width: $mobile) {
+                    position: absolute;
+                    left: 42%;
+                    top: 32%;
+                    padding: 0 1% 0 0;
+                    width: 58%;
+                }
+                @media (min-width: $mobile-wide) {
+                    top: 29%;
+                }
+                @media (min-width: $tablet) {
+                    left: 46%;
+                    width: 54%;
+                }
+                @media (min-width: $inner-wrapper) {
+                    top: 41%;
+                }
+                @media (min-width: $wrapper) {
+                    top: 38%;
+                    left: 50.5%;
+                    width: 49.5%;
+                    padding: 0;
+                    text-shadow: none;
+                }
+                h2 {
+                    font: 38px/1 $futura-light;
+                    color: $text-white;
+                    @media (min-width: $mobile) {
+                        font-size: 20px;
+                        max-width: 228px;
+                        margin: 0 auto;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        font-size: 28px;
+                        max-width: 314px;
+                    }
+                    @media (min-width: $tablet) {
+                        font-size: 30px;
+                        max-width: 344px;
+                    }
+                    @media (min-width: $laptop) {
+                        font-size: 48px;
+                        max-width: 526px;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        font-size: 52px;
+                        max-width: 600px;
+                    }
+                    @media (min-width: $wrapper) {
+                        font-size: 68px;
+                        width: auto;
+                        max-width: none;
+                    }
+                }
+                p {
+                    max-width: 635px;
+                    font: 15px/1.5 $futura-medium;
+                    color: $text-white;
+                    @media (min-width: $mobile) {
+                        font-size: 10px;
+                        margin: 3% auto 0;
+                        max-width: 194px;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        font-size: 14px;
+                        max-width: 272px;
+                    }
+                    @media (min-width: $tablet) {
+                        margin-top: 2%;
+                    }
+                    @media (min-width: $laptop) {
+                        font-size: 16px;
+                        max-width: 430px;
+                    }
+                    @media (min-width: $wrapper) {
+                        font-size: 18px;
+                        width: auto;
+                        max-width: 634px;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    section#process {
+        background-color: $white;
+        width: 100%;
+        padding: 70px 0 110px 0;
+        text-align: center;
+        h2 {
+            font: 36px/1 $futura-condensed-bold;
+            margin: 0 auto;
+            width: 90%;
+            @media (min-width: $mobile-wide) {
+                font-size: 42px;
+            }
+        }
+        p {
+            font: 18px/1.3 $futura-light;
+            margin: 13px auto 0;
+            width: 95%;
+            max-width: 1008px;
+        }
+        .stages {
+            width: 100%;
+            max-width: 720px;
+            margin: 53px auto 0;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            @media (min-width: $laptop) {
+                max-width:$wrapper;
+            }
+            .stage {
+                position: relative;
+                width: 100%;
+                max-width: 720px;
+                overflow: hidden;
+                @media (min-width: $laptop) {
+                    width: 50%;
+                }
+                img {
+                    width: 100%;
+                    display: block;
+                }
+                h4 {
+                    position: absolute;
+                    font: 26px/1 $futura-heavy;
+                    letter-spacing: 9px;
+                    width: 100%;
+                    top: 50%;
+                    margin-top: -21px;
+                    opacity: 1;
+                    color: $text-white;
+                    text-shadow: 0 0 41px $black;
+                    @media (min-width: $mobile-wide) {
+                        font-size: 42px;
+                        letter-spacing: 13px;
+                    }
+                }
+                h4, .popup {
+                    transition: opacity .3s ease;
+                }
+                &.stage1, &.stage3 {
+                    float: left;
+                }
+                &.stage2, &.stage4 {
+                    float: right;
+                }
+                &.stage3 {
+                    clear: left;
+                }
+                .popup, .txt {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                &.hover {
+                    .popup {
+                        opacity: 1;
+                    }
+                    > h4 {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        // gray semitransparent overlays
+        .popup {
+            opacity: 0;
+            .txt {
+                color: $text-white;
+                text-align: center;
+                background-color: rgba(42, 42, 42, 0.9);
+                .circle {
+                    position: relative;
+                    width: 24.31%;
+                    height: 34.65%;
+                    border-radius: 50%;
+                    background: transparent;
+                    border: 2px solid $text-white;
+                    margin: 4.45% auto 0;
+                    @media (min-width: $mobile) {
+                        margin-top: 5%;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        margin-top: 9%;
+                    }
+                    @media (min-width: $laptop) {
+                        margin-top: 7%;
+                    }
+                    @media (min-width: $inner-wrapper) {
+                        margin-top: 9%;
+                    }
+                    .nbr {
+                        font: 52px/1.2 $avenir-regular;
+                        color: $text-white;
+                        text-align: center;
+                        @media (min-width: $mobile) {
+                            font-size: 66px;
+                        }
+                        @media (min-width: $mobile-wide) {
+                            font-size: 82px;
+                        }
+                        @media (min-width: $tablet) {
+                            font-size: 104px;
+                        }
+                        @media (min-width: $laptop) {
+                            font-size: 82px;
+                        }
+                        @media (min-width: $wrapper) {
+                            font-size: 104px;
+                        }
+                        span.actn {
+                            display: block;
+                            text-transform: uppercase;
+                            font: 17.3%/1 $futura-light;
+                            letter-spacing: 1px;
+                            margin-top:17%;
+                        }
+                    }
+                }
+                h5 {
+                    font: 20px/1.5 $futura-heavy;
+                    letter-spacing: 12px;
+                    margin: 2% 0 0 0; //29px 0 0 0;
+                    @media (min-width: $mobile) {
+                        font-size: 25px;
+                        margin-top: 4%;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        font-size: 30px;
+                        margin-top: 5.74%;
+                    }
+                    @media (min-width: $tablet) {
+                        margin-top: 4%;
+                    }
+
+                }
+                p {
+                    font: 12px/1.8 $futura-medium;
+                    margin: 0 auto;
+                    max-width: 515px;
+                    @media (min-width: $mobile) {
+                        font-size: 13px;
+                        margin-top: 2%;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        font-size: 16px;
+                        margin-top: 3%;
+                    }
+                    @media (min-width: $tablet) {
+                        margin-top: 2.5%;
+                    }
+                }
+            }
+        }
+    }
+
+    section#s5 {
+        text-align: center;
+        padding: 58px 0 74px 0;
+        background-color: #818285;
+        color: $text-white;
+        @media (min-width: $laptop) {
+            padding: 117px 0 149px 0;
+        }
+        h3 {
+            font: 30px/1 $futura-condensed-bold;
+            margin: 0 auto;
+            @media (min-width: $mobile) {
+                font-size: 38px;
+                width: 400px;
+            }
+            @media (min-width: $mobile-wide) {
+                font-size: 44px;
+                width: 500px;
+            }
+            @media (min-width: $tablet) {
+                font-size: 36px;
+                width: auto;
+            }
+            @media (min-width: $laptop) {
+                font-size: 52px;
+            }
+            @media (min-width: $inner-wrapper) {
+                font-size: 62px;
+            }
+        }
+        p {
+            font: 12px/1.8 $futura-light;
+            margin: 18px auto;
+            width: 300px;
+            @media (min-width: $mobile) {
+                font-size: 14px;
+                width: 360px;
+            }
+            @media (min-width: $mobile-wide) {
+                font-size: 14px;
+                width: 450px;
+            }
+            @media (min-width: $tablet) {
+                font-size: 14px;
+                width: 600px;
+            }
+            @media (min-width: $laptop) {
+                font-size: 18px;
+                padding: 0;
+                width: auto;
+                max-width: 756px;
+            }
+            @media (min-width: $inner-wrapper) {
+                font-size: 18px;
+            }
+        }
+        img {
+            display: block;
+            margin: 41px auto 0;
+            max-width: 895px;
+            width: 75%;
+        }
+    }
+
+    section#s6 {
+        text-align: center;
+        padding: 87px 0 100px 0;
+        h2 {
+            font: 36px/1 $futura-condensed-bold;
+            @media (min-width: $mobile-wide) {
+                font-size: 42px;
+            }
+        }
+        p {
+            font: 17px/1.5 $futura-light;
+            margin: 10px auto 0;
+            max-width: 1110px;
+            width: 95%;
+        }
+        form {
+            text-align: left;
+            display: block;
+            max-width: 1266px;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: 55px auto 16px;
+            @media (min-width: $tablet) {
+                width: 98%;
+                flex-direction: row;
+            }
+            > div {
+                padding-bottom: 19px;
+            }
+            div.lt-side {
+                width: 100%;
+                @media (min-width: $tablet) {
+                    border-right: 1px solid $light-blue;
+                    width: 50%;
+                    padding-right: 5%;
+                }
+            }
+            div.rt-side {
+                width: 100%;
+                @media (min-width: $tablet) {
+                    width: 50%;
+                    padding-left: 5%;
+                }
+            }
+            .form-row {
+                width: 100%;
+                overflow: hidden;
+                @media (min-width: $tablet) {
+                    width: 100%;
+                    overflow: hidden;
+                }
+                &.profession {
+                    margin-top: 32px;
+                    @media (min-width: $tablet) {
+                        margin-top: 32px;
+                    }
+                }
+            }
+            div.half-width {
+                width: 100%;
+                @media (min-width: $tablet) {
+                    width: 47.5%;
+                    float: left;
+                }
+                &:nth-child(2) {
+                    @media (min-width: $tablet) {
+                        float: right;
+                    }
+                }
+            }
+            label {
+                color: $text-dark-grey;
+                font: 18px $futura-light;
+
+                &.top-lbl {
+                    display: block;
+                    line-height: 50px;
+                    padding-top: 2px;
+                }
+                &.rt-lbl {
+                    display: inline-block;
+                    margin-right: 3%;
+                }
+                span {
+                    margin: 0 5px 0 0;
+                }
+            }
+            input[type="text"], input[type="email"], select {
+                background-color: $light-grey;
+                color: $text-mid-grey;
+                font-size: 18px;
+                padding: 10px 10px;
+            }
+            input[type="text"], input[type="email"] {
+                width: 100%;
+            }
+            select {
+                width: 100%;
+                @media (min-width: $tablet) {
+                    width: 50%;
+                }
+            }
+            .other-row {
+                margin: 12px 0 0 0;
+                @media (min-width: $tablet) {
+                    margin: 12px 0 0 0;
+                }
+                .input.other {
+                    width: 100%;
+                    @media (min-width: $tablet) {
+                        width: 80%;
+                    }
+                }
+            }
+            .zip-code {
+                margin-top: 14px;
+            }
+            .styledRadio {
+                margin: 2px 10px 4px 0;
+                float: left;
+            }
+            .error {
+                .input {
+                    border: 1px solid #ff7f7f;
+                    color: #ec6c6c;
+                }
+                label {
+                    color: #ec6c6c;
+                }
+            }
+        }
+        .required {
+            width: 90%;
+            max-width: 1266px;
+            text-align: left;
+            font: 14px/1 $futura-light;
+            margin: 0 auto;
+            @media (min-width: $tablet) {
+                width: 98%;
+            }
+        }
+        .btn {
+            font-family: $futura-heavy;
+            max-width: 450px;
+            border-bottom: 0;
+            font-size: 19px;
+            line-height: 1;
+            margin: 63px auto 0;
+            color: $white;
+            padding: 10px 5px;
+            width: 90%;
+        }
+
+        .btn:hover {
+            color: $white;
+        }
+    }
+    .submit_btn.disabled {
+        background: #a9a9a9 !important;
+        color: #cbcbcb !important;
+    }
+}
+
+.gap {
+    background-color:transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 26%;
+    background-size:cover;
+}
+.skrollr .gap {
+    background:transparent !important;
+}
+.parallax-image-wrapper {
+    position:fixed;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    height: 100%;
+    top: -100%;
+    z-index: -1;
+}
+.parallax-image {
+    display:none;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    height: 100%;
+    top: 0;
+    &.skrollable-between {
+        display:block;
+    }
+}
+
+.no-skrollr .parallax-image-wrapper {
+    display:none !important;
+}
+
+/*****************************************
+* END OUR STORY LANDING PAGE
+******************************************/
+
+
+/****************************************
+ *    START CAREERS PAGE
+*****************************************/
+
+main.careers {
+    .s1 {
+        height: 0;
+        width: 100%;
+        padding-bottom: 151px;
+        position: relative;
+        background-image: url(https://cdn.shopify.com/s/files/1/1125/0762/files/careers_bg.jpg?12158836166624474767);
+        background-size: 100% auto;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        @media (min-width: $mobile) {
+            padding-bottom: 39.44%;
+        }
+        .caption {
+            position: absolute;
+            width: 100%;
+            max-width: $wrapper;
+            height: 100%;
+            padding-left: 11%;
+            padding-top: 4%;
+            @media (min-width: $wrapper) {
+                position: relative;
+                width: 1440px;
+                margin: 0 auto;
+            }
+            h2 {
+                color: $ft-green;
+                font: 46px/0.9 $futura-heavy;
+                letter-spacing: 5px;
+                @media (min-width: $mobile) {
+                    font-size: 48px;
+                }
+                @media (min-width: $mobile-wide) {
+                    font-size: 68px;
+                }
+                @media (min-width: $tablet) {
+                    font-size: 86px;
+                }
+                @media (min-width: $laptop) {
+                    font-size: 120px;
+                }
+                @media (min-width: $inner-wrapper) {
+                    font-size: 145px;
+                }
+                @media (min-width: $wrapper) {
+                    font-size: 172px;
+                }
+            }
+        }
+    }
+    .s2 {
+        position: relative;
+        width: 100%;
+        //max-width: $inner-wrapper;
+        margin: 0 auto;
+        padding-top: 35px;
+        @media (min-width: $mobile-wide) {
+            background-image: url(https://cdn.shopify.com/s/files/1/1125/0762/files/careers_topo_bg.jpg?12158836166624474767);
+            background-size: 100% auto;
+            background-position: center top;
+            background-repeat: no-repeat;
+            padding-top: 50px;
+        }
+        @media (min-width: $tablet) {
+            padding-top: 70px;
+        }
+        @media (min-width: $wrapper) {
+            padding-top: 90px;
+        }
+        .logo_only {
+            background: url(#{'{{ "logo_no_text.png" | asset_url }}'});
+            background-position: center top;
+            background-size: 35px 35px;
+            background-repeat: no-repeat;
+            width: 100%;
+            height:35px;
+            position: absolute;
+            top: -10.5px;
+            @media (min-width: $mobile-wide) {
+                background-size: 50px 50px;
+                height: 50px;
+                top: -15px;
+            }
+            @media (min-width: $tablet) {
+                background-size: 70px 70px;
+                height: 70px;
+                top: -21px;
+            }
+        }
+        .txt {
+            padding: 2.5%;
+            @media (min-width: $mobile-wide) {
+                padding: 3% 24% 3% 12%;
+            }
+            p {
+                max-width: $inner-wrapper;
+                margin: 24px auto;
+                font: 18px/1.5 $futura-light;
+                color: $text-mid-grey;
+            }
+        }
+    }
+    .s3 {
+        width: 98%;
+        max-width: $tablet;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+}
+/****************************************
+ *    END CAREERS PAGE
+*****************************************/
+
+
+/****************************************
+ *    START SEATTLE FIRE
+*****************************************/
+.seattlefire {
+    background: url(https://cdn.shopify.com/s/files/1/1125/0762/files/seattle_fire_login_header_bg.jpg?8603291427665365530) top center no-repeat;
+    height: 556px;
+    color: $white;
+    text-align: center;
+    padding-top: 67px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    margin-top: 15px;
+
+    .text-line1 {
+        font-family: $futura-heavy;
+        font-size: 16px;
+        text-transform: uppercase;
+        @media (min-width: $mobile-wide) {
+            font-size: 22px;
+        }
+        @media (min-width: $tablet) {
+            font-size: 22px;
+        }
+    }
+    .text-line2 {
+        font-family: $futura-condensed-bold;
+        font-size: 67px;
+        text-transform: uppercase;
+        @media (min-width: $mobile-wide) {
+            font-size: 100px;
+        }
+        @media (min-width: $tablet) {
+            font-size: 120px;
+        }
+    }
+    .text-line3 {
+        font-family: $futura-medium;
+        font-size: 20px;
+        text-transform: uppercase;
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        display: inline;
+        @media (min-width: $mobile-wide) {
+            font-size: 32px;
+        }
+        @media (min-width: $tablet) {
+            font-size: 37px;
+        }
+    }
+    p {
+        width: 90%;
+        max-width: 535px;
+        margin: 20px auto;
+        font-family: $futura-medium;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    img {
+        bottom: -55px;
+        left: 0;
+        max-width: 286px;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 90%;
+    }
+}
+
+/****************************************
+ *    END SEATTLE FIRE
+*****************************************/

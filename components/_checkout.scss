@@ -1,0 +1,1731 @@
+/*********************************
+* START OF CHECKOUT CSS
+**********************************/
+// keeps two words together like First Tactical
+span.keep-together {
+    white-space: nowrap;
+}
+/********************
+* CHECKOUT 1
+*********************/
+main#checkout {
+    input[type="radio"] {
+        border-radius: 50%;
+        border: 1px solid $text-light-grey;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+        border: 1px solid $text-light-grey;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+    .visually-hidden {
+        display: none;
+    }
+
+    section {
+        padding-left: 0;
+        padding-right: 0;
+        width: 95%;
+        margin: 0 auto;
+
+        h2 {
+            position: relative;
+
+            #promo-code-anchor {
+                font: 14px/1 $futura-medium;
+                text-transform: none;
+                position: absolute;
+                bottom: 12px;
+                right: 0;
+                text-decoration: underline;
+                color: $light-blue;
+
+                &:hover {
+                    color: $dark-blue;
+                }
+
+                @media (min-width: $tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #stps {
+        height: 100px;
+        width: 300px;
+        padding: 25px 0 0;
+        margin: 0 auto;
+        position: relative;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;
+
+
+
+        @media (min-width: $tablet) {
+            height: 75px;
+            width: 50%;
+            min-width: 375px;
+            padding: 0;
+            position: absolute;
+            top: 16px;
+            left: 30%;
+        }
+
+        @media (min-width: $laptop) {
+            min-width: 0;
+            width: 378px;
+            left: 50%;
+            margin-left: -250px;
+        }
+
+
+        $completed-color: $text-light-grey;
+        $default-color: $text-mid-grey;
+        $current-color: $ft-green;
+
+        .stp {
+            width: 33.33%;
+            //float: left;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+        .stp1 {
+            left: 0;
+        }
+        .stp2 {
+            left: 33.33%;
+        }
+        .stp3 {
+            left: 66.66%;
+        }
+        //.stp4 {
+        //    left: 75%;
+        //}
+
+        .txt {
+            font: 10px/1 $futura-light;
+            color: $default-color;
+            text-transform: uppercase;
+            padding-bottom: 8px;
+
+            @media (min-width: $tablet) {
+                font-size: 12px;
+            }
+        }
+        .nbr {
+            background-color: $white;
+            border: 1px solid $default-color;
+            font: 16px/34px $futura-medium;
+            color: $default-color;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px $white;
+            width: 34px;
+            height: 34px;
+            margin: 0 auto;
+        }
+
+        .completed.stp {
+            .txt {
+                font-family: $futura-heavy;
+                font-size: 12px;
+                color: $completed-color;
+
+                @media (min-width: $tablet) {
+                    font-size: 14px;
+                }
+            }
+            .nbr {
+                color: $white;
+                background-color: $completed-color;
+                border-color: $completed-color;
+            }
+        }
+
+        .current.stp {
+            .txt {
+                font-family: $futura-heavy;
+                font-size: 12px;
+                color: $current-color;
+
+                @media (min-width: $tablet) {
+                    font-size: 14px;
+                }
+            }
+            .nbr {
+                color: $white;
+                background-color: $current-color;
+                border-color: $current-color;
+            }
+        }
+    }
+
+
+    .rt-side, .lt-side {
+
+        padding: 0;
+        border: 0;
+        margin-top: 36px;
+        max-width: none;
+        color: $text-mid-grey;
+    }
+
+    .lt-side {
+        width: 100%;
+        max-width: 500px;
+
+        @media(min-width: $tablet) {
+            max-width: none;
+            width: 50%;
+        }
+
+        @media(min-width: $laptop) {
+            width: 541px;
+        }
+
+        h2 {
+            font: 24px/1 $futura-light;
+            border-bottom: none;
+            font-weight: 600;
+            color: $text-mid-grey;
+        }
+
+        p.section__content__text {
+            color: $text-mid-grey;
+            margin: 12px 0 36px;
+
+            a {
+                text-decoration: underline;
+                padding-left: 6px;
+            }
+        }
+
+        .field {
+            overflow: hidden;
+
+            @media (min-width: $mobile) {
+                margin-right: 2.40%;
+            }
+        }
+
+
+
+        .section {
+            clear: both;
+
+
+            .checkbox-wrapper {
+                margin: 19px 0 3px;
+            }
+
+            .checkbox__input {
+                float: left;
+                margin-right: 6px;
+            }
+
+        }
+
+        .section--shipping-address {
+
+            .checkbox__label {
+                margin:0;
+                position: relative;
+                left: 7px;
+                top: 3px;
+            }
+        }
+
+
+        .logged-in-customer-information__paragraph {
+            padding: 18px 2.4% 36px 0;
+
+            a {
+                float: right;
+                position: relative;
+                bottom: 17px;
+                text-decoration: underline;
+            }
+        }
+
+        .section--shipping-address {
+            .section__content {
+
+                .country-lbl {
+                    color: $text-dark-grey;
+                    font: 14px/1 $futura-light;
+
+                    @media (min-width: $mobile) {
+                        width: 97.6%;
+                    }
+
+                    span {
+                        color: $text-mid-grey;
+                        font-family: $futura-light;
+                        float: right;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .country-txt {
+                    font: 14px/1 $futura-light;
+                    color: $text-dark-grey;
+                    margin-top: 6px;
+                }
+
+                .fieldset {
+
+                    // first name and last name
+                    .field--half,
+                    div[data-province-section],
+                    div[data-zip-section]
+                    {
+                        @media (min-width: $mobile) {
+                            width: 47.59%;
+                            float: left;
+                        }
+                    }
+
+                    // address 1
+                    .field--two-thirds {
+                        overflow: visible;
+                        position: relative;
+                        clear: both;
+
+                        @extend .clearfix;
+
+                        .tooltip_row {
+                            position: relative;
+                            display: inline-block;
+                            color: $light-blue;
+                            font: 13px/36px $futura-medium;
+
+                            @media (min-width: $inner-wrapper) {
+                                position: absolute;
+                                left: 102%;
+                                bottom: 0;
+                            }
+
+                            .question_ico {
+                                display: block;
+                                width: 130%;
+                                height: 100%;
+                                z-index: 1;
+                                cursor: pointer;
+                                background: url(//cdn.shopify.com/s/files/1/1125/0762/files/cvv_help_icon.png?7116204666449131788) no-repeat right center;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+
+                    // address 2
+                    .field--third {
+                        clear: both;
+                    }
+
+                    // country
+                    div[data-country-section] {
+                        display: none;
+                    }
+
+                    // Phone [type=tel]
+                    > div:last-child {
+                        @media (min-width: $mobile) {
+                            clear: both;
+                            width: 47.59%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .step__footer {
+            padding-top: 15px;
+
+            .step__footer__continue-btn {
+                width: 144px;
+                margin-left: auto;
+
+                @media (min-width: $mobile) {
+                    margin-right: 2.4%;
+                }
+
+                @media (min-width: $mobile-wide) {
+                    width: 184px;
+                }
+            }
+
+            .btn__content {
+                line-height: 18px;
+                padding-right: 20px;
+                background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) no-repeat right center;
+            }
+
+            .step__footer__previous-link {
+                position: relative;
+                top: -22px;
+            }
+        }
+
+        a {
+            color: $light-blue;
+            fill: currentColor;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
+
+        .tooltip_block {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 298px;
+
+            @media (min-width: $mobile-wide) {
+                position: absolute;
+                left: 153%;
+                top: -17px;
+                width: 385px;
+            }
+
+            .close_btn {
+                background: url(#{'{{ "first-tactical-video-close.png" | asset_url }}'}) no-repeat right center !important;
+                position: absolute;
+                cursor: pointer;
+                z-index: 8040;
+                width: 30px;
+                height: 30px;
+                right: -12px;
+                top: -12px;
+            }
+
+            &:before {
+                border-bottom-color: $text-light-grey;
+                margin-left: 0;
+                left: 63px;
+
+                @media (min-width: $mobile-wide) {
+                    width: 0;
+                    height: 0;
+                    border-top: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    border-right: 15px solid $text-light-grey;
+                    position: absolute;
+                    left: -26px;
+                    top: 18px;
+                }
+            }
+
+            &:after {
+                margin-left: 0;
+                left: 66px;
+
+                @media (min-width: $mobile-wide) {
+                    width: 0;
+                    height: 0;
+                    border-top: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    border-right: 15px solid $white;
+                    position: absolute;
+                    left: -20px;
+                    top: 18px;
+                }
+            }
+        }
+
+    }
+
+    .rt-side {
+        //width: 29.16%;
+        width: 100%;
+        max-width: 450px;
+        position: relative;
+
+        @media(min-width: $tablet) {
+            width: 45%;
+        }
+
+        @media(min-width: $laptop) {
+            width: 350px;
+        }
+
+        // hide the shopify ajax order summary
+        .order-summary__section--product-list {
+            display: none;
+        }
+
+        .mini_cart {
+            position: static;
+            left: 0;
+            top: 0;
+            right: auto;
+            width: auto;
+            box-shadow: none;
+            display: block !important;
+            height: auto !important;
+
+            > .item_box {
+                display: none;
+            }
+
+            p.items {
+                background-color: $border-grey;
+                font: 18px/1 $futura-heavy;
+                text-align: center;
+                padding: 15px;
+                border-bottom: 2px solid $white;
+
+                span {
+                    font: 16px/1 $futura-light;
+                }
+            }
+
+            #cart_items {
+                border: 1px solid $border-grey;
+                padding: 0 10px;
+
+                @media (min-width: $tablet) {
+                    max-height: 437px;
+                    overflow-y: scroll;
+                    //overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+
+                .item_size {
+                    vertical-align: top;
+                }
+
+                .item_box:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .order-summary__section--discount {
+            background-color: $border-grey;
+            padding: 3px 14px 11px;
+
+            .field__input-wrapper {
+                width: 70%;
+                display: inline-block;
+            }
+
+            .field__input-btn-wrapper {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .field__input-btn {
+                width: 27%;
+                display: inline-block;
+                border-bottom: 0;
+                padding: 0;
+                margin-top: -3px;
+                line-height: 34px;
+                align-self: flex-end;
+            }
+        }
+
+        .order-summary__section--total-lines {
+            background-color: $light-grey;
+            font: 14px/1.9 $futura-medium;
+            color: $text-dark-grey;
+            padding: 15px 14px 3px;
+
+            .total-line-table {
+                width: 100%;
+
+                td {
+                    vertical-align: top;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+            }
+            .total-line__price {
+                text-align: right;
+            }
+
+            .payment-due__currency {
+                display: none;
+            }
+
+            .total-line--taxes td {
+                padding-bottom: 12px;
+            }
+
+            .total-line-table__footer {
+                border-top: 1px solid $text-light-grey;
+
+                td {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    white-space: nowrap;
+                }
+            }
+
+            .payment-due-label__total {
+                font-family: $futura-heavy;
+                text-transform: uppercase;
+            }
+
+            .payment-due__price {
+                font: 24px $futura-heavy;
+            }
+        }
+    }
+
+    .field--error {
+        input {
+            border: 1px solid $error;
+        }
+
+        label {
+            color: $error;
+        }
+    }
+
+    .free-shipping {
+        margin: 0 1px;
+        padding: 23px 0;
+        border-bottom: 1px solid $text-light-grey;
+    }
+
+    .cust-serv {
+        margin: 0;
+        padding: 23px 0 10px;
+
+        #apo-fpo {
+            cursor: pointer;
+        }
+    }
+
+    // promo code styles
+
+    .applied-reduction-code__icon {
+        display: none;
+    }
+
+
+    .applied-reduction-code__clear-button {
+        background: darkred;
+        color: white;
+        font-size: 0;
+        padding: 5px;
+        cursor: pointer;
+        margin-left: 3px;
+
+        &.icon.icon--clear .visually-hidden {
+            display: block;
+
+            &:after {
+                content: "Remove";
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// can appear inside of fancybox
+// which is outside of the wrapper
+.tooltip_row {
+    .tooltip_block {
+        padding: 20px;
+        border: 2px solid $text-light-grey;
+        padding-bottom: 16px;
+        background: #fff;
+        display: none;
+        cursor: default;
+        width: 385px;
+        z-index: 1000;
+        margin: 0;
+
+        .tooltip_content {
+            position: relative;
+        }
+
+        .close_text {
+            display: inline-block;
+            font: 15px/1 $futura-medium;
+            color: $light-blue;
+            padding-top: 10px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
+
+        .tooltip_title {
+            font: 15px/1 $futura-medium;
+            font-weight: bold;
+            color: #000;
+            padding-bottom: 20px;
+        }
+
+        .tooltip_list ul li {
+            font: 13px/1 $futura-medium;
+            color: #000;
+            padding: 0 0 20px 11px;
+            background: url(#{'{{ "list-pointer.png" | asset_url }}'}) no-repeat left 5px;
+
+        }
+    }
+}
+/*
+// outside of the wrapper main#checkout
+.fancybox-wrap .tooltip_block {
+    border: 0;
+    //height: 200px;
+    width: auto;
+    max-width: 385px;
+    overflow: hidden;
+    margin: 0;
+    .close_text {
+        display: none;
+    }
+}
+*/
+
+.promo_product_container {
+    width: 100%;
+    margin: 0 10px;
+}
+
+.promo_product_container {
+    border-bottom: 1px solid #cbcbcb;
+    margin: 0 auto;
+    padding: 28px 0;
+    width: 100%;
+    background: url(#{'{{ "ft_checkout_promo_bg.gif" | asset_url }}'});
+
+    .promo_block {
+        text-align: center;
+
+        h2 {
+            color: #4a6441;
+            font-size: 30px;
+            margin-bottom: 5px;
+
+        }
+        p {
+            color: #676767;
+            font-size: 18px;
+        }
+        .white_btn {
+            background: transparent;
+            border: 2px #508b92 solid;
+            font-family: $futura-heavy;
+            font-size: 16px;
+            color: $light-blue;
+            text-transform: uppercase;
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 20px;
+        }
+        .white_btn {
+            margin: 18px 0 0;
+
+            span.arrow {
+                background: url(//cdn.shopify.com/s/files/1/1125/0762/t/7/assets/first-tactical-blue-arrow.png?11607097576152125892) right center no-repeat;
+                padding-right: 15px;
+                background-size: auto 66%;
+            }
+        }
+    }
+
+    .promo_products {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1440px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+
+
+            li {
+                display: inline-block;
+                margin-right: 10px;
+                position: relative;
+                width: calc((100% - 20px) / 2);
+
+                @media (min-width: $tablet) {
+                    width: calc((100% - 40px) / 4);
+                }
+
+                @media (min-width: $inner-wrapper) {
+                    width: calc((100% - 60px) / 6);
+                }
+            }
+        }
+
+
+        .product_card {
+            background: #fff;
+            width: 100%;
+            margin-top: 8px;
+            -moz-box-shadow: 0 0 10px #e8e8e8;
+            -webkit-box-shadow: 0 0 10px #e8e8e8;
+            box-shadow: 0 0 10px #e8e8e8;
+            position: relative;
+
+            .product {
+                text-align: center;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                }
+
+                .product_info {
+                    background: #fff;
+                    padding: 0 16px;
+                    position: relative;
+                    width: 100%;
+                    min-height: 92px;
+
+                    .product_name {
+                        display: inline-block;
+                        margin: 5px 0 0px 0;
+                        font-size: 15px;
+                        color: #666666;
+                        font-family: $futura-medium;
+                        text-transform: uppercase;
+                        width: 65%;
+                        line-height: 20px;
+                        vertical-align: text-bottom;
+                    }
+                }
+            }
+        }
+
+
+
+
+    }
+}
+
+
+
+/*****************
+* CHECKOUT 2
+******************/
+
+main#checkout {
+
+    .section--shipping-address-recap {
+
+        .section__content {
+            p {
+                padding: 25px 0 40px 25px;
+                font:12px/1.5 $futura-medium;
+                color: $text-dark-grey;
+                position: relative;
+
+                @media (min-width: $mobile) {
+                    font-size: 14px;
+                }
+
+                a.edit-link--small {
+                    position: absolute;
+                    top: 25px;
+                    right: 25px;
+                    text-decoration: underline;
+
+                    @media (min-width: $mobile) {
+                        left: 50%;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .section--shipping-method {
+        padding: 32px 0 0;
+        border-top: 1px solid $text-light-grey;
+
+        .section__content {
+
+            padding: 20px 0 0;
+
+            .notice.notice--warning {
+
+                p.notice__text {
+                    color: $error;
+                    padding-bottom: 20px;
+                }
+            }
+
+            .content-box {
+
+                .content-box__row {
+                    width: 100%;
+                    margin: 5px 0 4px;
+
+                    .radio-wrapper {
+                        border: 1px solid $border-grey;
+                        padding: 4px 10px 3px 5px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        margin-right: 2.4%;
+
+
+                        .radio__input {
+                            float: left;
+                            margin-right: 5px;
+                            cursor: pointer;
+
+                            input {
+                                margin-top: 2px;
+
+                                &[id*="ground"] {
+
+                                    @media (min-width: $mobile-wide) {
+                                        margin-top: 9px;
+                                    }
+
+                                    @media (min-width: $tablet) {
+                                        margin-top: 0;
+                                    }
+
+                                    @media (min-width: $laptop) {
+                                        margin-top: 9px;
+                                    }
+                                }
+                            }
+                        }
+
+
+                        &.active {
+                            background-color: $border-grey;
+                        }
+
+                        label {
+                            margin: 0;
+                            cursor: pointer;
+                            width: 100%;
+                            font-size: 12px;
+                            padding-left: 18px;
+                            color: $text-light-mid-grey;
+                            line-height: 1.25;
+                            position: relative;
+
+                            @media (min-width: $mobile) {
+                                font-size: 14px;
+                            }
+
+                            &:after {
+                                display: block;
+                            }
+
+                            .radio__label {
+                                white-space: nowrap;
+                                width: 74%;
+                            }
+
+
+                            span {
+                                display: inline-block;
+                                color: $text-dark-grey;
+                            }
+
+
+                            .radio__accessory {
+                                text-transform: uppercase;
+                                text-align: right;
+                                width: 56px;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+
+                                @media (min-width: $mobile) {
+                                    width: 25%;
+                                    min-width: 94px;
+                                }
+
+                                @media (min-width: $mobile-wide) {
+                                    width: 25%;
+                                    min-width: 0;
+                                    position: static;
+                                    float: right;
+                                }
+
+                                @media (min-width: $tablet) {
+                                    width: 56px;
+                                }
+
+                                @media (min-width: $tablet-wide) {
+                                    width: 25%;
+                                }
+
+                                &:before {
+                                    width: 100%;
+                                    float: right;
+                                    color: $text-light-mid-grey;
+                                    text-transform: initial;
+
+                                    @media (min-width: $mobile) {
+                                        float: left;
+                                        width: auto;
+                                    }
+
+                                    @media (min-width: $tablet) {
+                                        float: right;
+                                        width: 100%;
+                                    }
+
+                                    @media (min-width: $tablet-wide) {
+                                        float: left;
+                                        width: auto;
+                                    }
+                                }
+                            }
+                        }
+
+                        label[for*="ground"] {
+
+                            @media (min-width: $mobile-wide) {
+                                padding-top: 0;
+                                padding-bottom: 0;
+                            }
+
+                            @media (min-width: $mobile-wide) {
+                                padding-top: 9px;
+                                padding-bottom: 9px;
+                            }
+
+                            @media (min-width: $tablet) {
+                                padding-top: 0;
+                                padding-bottom: 0;
+                            }
+
+                            @media (min-width: $laptop) {
+                                padding-top: 9px;
+                                padding-bottom: 9px;
+                            }
+
+                            .radio__label {
+                                &:after {
+                                    content: ' ( 7 to 10 Business Days )';
+                                    display: block;
+
+                                    @media (min-width: $mobile-wide) {
+                                        display: inline;
+                                    }
+
+                                    @media (min-width: $tablet) {
+                                        display: block;
+                                    }
+
+                                    @media (min-width: $laptop) {
+                                        display: inline;
+                                    }
+                                }
+                            }
+
+                            .radio__accessory {
+
+                                &:before {
+                                    content: "FedEx";
+                                }
+                            }
+                        }
+
+                        label[for*="day"] {
+
+                            .radio__label:after {
+                                content: " ( 2 Business Days )";
+                            }
+
+                            .radio__accessory:before {
+                                content: "FedEx";
+                            }
+
+                            &:after {
+                                content: "Order must be placed by 10am PST";
+                            }
+
+                        }
+
+                        label[for*="night"] {
+
+                            .radio__label:after {
+                                content: " ( 1 Business Day )";
+                            }
+
+                            .radio__accessory:before {
+                                content: "FedEx";
+                            }
+
+                            &:after {
+                                content: "Order must be placed by 10am PST";
+                            }
+                        }
+
+                        label[for*="usps"] {
+
+                            .radio__label:after {
+                                content: " ( 7 to 10 Business Days )";
+                            }
+
+                            .radio__accessory:before {
+                                content: "USPS";
+                            }
+
+                            &:after {
+                                content: "If shipped to APO/FPO address";
+                            }
+                        }
+
+                        label {
+                            -webkit-user-select: none;  /* Chrome all / Safari all */
+                            -moz-user-select: none;     /* Firefox all */
+                            -ms-user-select: none;      /* IE 10+ */
+                            user-select: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*************************************
+ * CHECKOUT 3
+**********************************/
+
+
+main#checkout {
+
+
+    .section.section--reductions {
+        display: none;
+    }
+
+    .lt-side {
+        .section--payment-method {
+            padding-bottom: 7px;
+
+            .section__text {
+                display: none;
+            }
+
+
+            .radio-wrapper {
+                margin-top: 15px;
+                .radio__input {
+                    display: inline;
+                    float: left;
+                    width: 25px;
+                }
+                .radio__label {
+                    display: inline;
+                }
+            }
+
+            .small_title {
+                font: 14px/1 $futura-heavy;
+                color: $text-dark-grey;
+                margin: 20px 0 0 0;
+
+                span {
+                    font:12px $futura-light;
+                    float: right;
+                }
+            }
+
+            .checkbox__label {
+                display: inline-block;
+                line-height: 22px;
+                float: left;
+                margin-right: 14px;
+                white-space:nowrap;
+            }
+
+            .content-box__row {
+                display: block;
+                clear: left;
+
+                @extend .clearfix;
+            }
+
+            .field {
+                // card number
+                &:first-child {
+                    width: 100%;
+
+                    @media (min-width: $mobile) {
+                        width: 47.59%;
+                        float: left;
+                    }
+                }
+                // card name
+                &:nth-child(2) {
+                    width: 100%;
+
+                    @media (min-width: $mobile) {
+                        width: 47.59%;
+                        float: right;
+                    }
+                }
+
+
+
+                // New CC Field styles
+                &:nth-child(3) {
+                    display: block;
+                    width: 29.81%;
+                    clear: both;
+                    float: left;
+                    min-width: 120px;
+                    margin-right: 2.4%;
+                }
+                &:nth-child(4) {
+                    width: 115px;
+                    clear: left;
+                    position: relative;
+
+                    @media (min-width: $mobile) {
+                        clear: none;
+                        float: left;
+                    }
+
+                    .cvv_icon {
+                        position: absolute;
+                        top: 17px;
+                        margin-left: 4px;
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+
+
+
+
+
+
+                /* Old CC Fields styles
+                // month
+                &:nth-child(3) {
+                    display: block;
+                    width: 29.81%;
+                    clear: both;
+                    float: left;
+                    min-width: 120px;
+                    margin-right: 2.4%;
+                }
+
+                // year
+                &:nth-child(4) {
+                    display: block;
+                    width: 15.37%;
+                    float: left;
+                    min-width: 65px;
+                }
+                // date
+                &:nth-child(5) {
+                    display: none;
+                    width: 48.76%;
+                    clear: both;
+                    float: left;
+                }
+                // CVV
+                &:nth-child(6) {
+                    width: 115px;
+                    clear: left;
+                    position: relative;
+
+                    @media (min-width: $mobile) {
+                        clear: none;
+                        float: left;
+                    }
+
+                    .cvv_icon {
+                        position: absolute;
+                        top: 17px;
+                        margin-left: 4px;
+                        height: 15px;
+                        width: 15px;
+
+                        img {
+                            height: 12px;
+                            padding-left: 6px;
+                        }
+                    }
+                }
+                */
+            }
+        }
+
+        label[for="checkout_buyer_accepts_marketing"] {
+            line-height: 1.25;
+            margin-left: 19px;
+            margin-right: 10px;
+            width: auto;
+        }
+
+        .section--billing-address {
+            margin-top: 37px;
+            padding: 25px 0 35px;
+            border-top: 1px solid $border-grey;
+            border-bottom: 1px solid $border-grey;
+
+            .radio__input {
+                float: left;
+                margin-right: 5px;
+            }
+
+            .radio__label {
+                font-family: $futura-heavy;
+            }
+
+            .section--shipping-address-recap {
+                .section__content {
+                    p {
+                        padding-top: 12px;
+                        padding-bottom: 10px;
+
+                        a.edit-link--small {
+                            position: static;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    label.payment-method-wrapper li {
+        background: rgba(0, 0, 0, 0) url(//cdn.shopify.com/s/files/1/1125/0762/t/7/assets/first-tactical-payment-card.png?3806645682856691749) no-repeat scroll 0 0;
+        display: inline-block;
+        float: left;
+        height: 20px;
+        margin-right: 4px;
+        overflow: hidden;
+        text-align: left;
+        text-indent: -999px;
+        width: 30px !important;
+        background-size: auto 225%;
+
+        &.payment-icon--visa {
+            background-position: 0 -1px;
+            &.selected {
+                background-position: 0 -25px;
+            }
+        }
+
+        &.payment-icon--master {
+            background-position: -45px -1px;
+            &.selected {
+                background-position: -45px -25px;
+            }
+        }
+
+        &.payment-icon--american-express {
+            background-position: -133px -1px;
+            &.selected {
+                background-position: -133px -25px;
+            }
+        }
+
+        &.payment-icon--discover {
+            background-position: -89px -1px;
+            &.selected {
+                background-position: -89px -25px;
+            }
+        }
+
+
+    }
+
+    .cvv_box {
+        background: #fff none repeat scroll 0 0;
+        border-left: 6px solid #9bb28f;
+        box-shadow: 1px 1px 5px 1px #e8e8e8;
+        display: none;
+        left: 85px;
+        padding: 78px 10px 20px 20px;
+        position: absolute;
+        top: -110px;
+        width: 444px;
+    }
+
+
+    .field__input.field__input--iframe-container {
+        border: 1px solid #999;
+        height: 46px;
+    }
+}
+
+
+
+
+
+
+/****************************************
+* ORDER CONFIRMATION
+*****************************************/
+
+
+main#order-confirm, #receipt-wrapper {
+    padding-top: 45px;
+    position: relative;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 80px;
+
+    @media (min-width: $tablet) {
+        width: 98%;
+    }
+
+
+    h2 {
+        position: relative;
+        font: 26px/62px $futura-heavy;
+        border-bottom: 1px solid #CCC;
+        letter-spacing: 1px;
+
+        a.print-this {
+            display: none;
+            font: 11px/2 $futura-medium;
+            position: absolute;
+            bottom: -34px;
+            right: 0;
+            color: $light-blue;
+            text-decoration: underline;
+            text-transform: capitalize;
+
+            @media (min-width: $laptop) {
+                display: inline-block;
+            }
+
+            &:hover {
+                color: $dark-blue;
+                text-decoration: none;
+            }
+        }
+    }
+
+    section, article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    article {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lt-side {
+        max-width: 600px;
+        margin-top: 46px;
+        border: 0;
+
+        @media (min-width: $tablet) {
+            float: left;
+            min-width: 430px;
+            width: 54.91%;
+            margin-top: 38px;
+        }
+
+
+        h3 {
+            font:26px/1 $futura-heavy;
+            color: $ft-green;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font: 13px $futura-medium;
+            color: $text-dark-grey;
+
+            &.order-number {
+                font: 13px/1 $futura-heavy;
+                margin-top: 12px;
+                text-transform: uppercase;
+
+                a {
+                    color: $light-blue;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: $dark-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            &.email {
+                line-height: 1.5;
+                padding: 20px 0 24px;
+                width: 100%;
+                border-bottom: 1px solid $text-light-grey;
+
+                @media (min-width: $tablet) {
+                    width: 90.9%;
+                }
+
+                span {
+                    font-weight: 900;
+                }
+            }
+
+            &.create {
+                font-size: 14px;
+                margin: 8px 0 0 0;
+            }
+        }
+
+        h4 {
+            font: 24px/1 $futura-light;
+            letter-spacing: 1.75px;
+            color: $text-dark-grey;
+            text-transform: uppercase;
+            margin: 24px 0 14px 0;
+
+            span {
+                color: $text-light-mid-grey;
+            }
+        }
+
+        .itms {
+
+            .itm {
+                padding: 13px 0;
+                clear: both;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $text-light-grey;
+                }
+
+                @extend .clearfix;
+
+                > div {
+                    height: 100%;
+                }
+
+                > div:not(:first-child) {
+                    padding-top: 5px;
+
+                    p {
+                        font: 12px/1.25 $futura-medium;
+                        color: $text-dark-grey;
+
+                        @media (min-width: $laptop) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .img {
+                    width: 28%;
+                    float: left;
+
+                    @media (min-width: $mobile) {
+                        width: 20%;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .desc {
+                    width: 40%;
+                    float: left;
+
+                    @media (min-width: $mobile) {
+                        width: 41%;
+                    }
+
+                    h5 {
+                        font: 12px/1.25 $futura-medium;
+                        color: $text-dark-grey;
+
+                        @media (min-width: $laptop) {
+                            font-size: 14px;
+                        }
+                    }
+                    h6 {
+                        font: 10px/1.25 $futura-medium;
+                        color: $text-light-mid-grey;
+                        padding-bottom: 7px;
+
+                        @media (min-width: $laptop) {
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+
+                .qty {
+                    width: 16%;
+                    float: left;
+                    text-align: center;
+
+                    @media (min-width: $mobile) {
+                        width: 19%;
+                    }
+                }
+
+                .prc {
+                    width: 16%;
+                    float: right;
+                    text-align: right;
+                    padding-right: 5px;
+
+                    @media (min-width: $mobile) {
+                        width: 18%;
+                    }
+                    p {
+                        font-family: $futura-heavy;
+                        &.strike {
+                            color: $error-red;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .rt-side {
+        margin-top: 57px;
+        max-width: 400px;
+
+        @media (min-width: $tablet) {
+            float: right;
+            width: 35%;
+        }
+
+        @media (min-width: $laptop) {
+            width: 350px;
+        }
+
+        h3 {
+            background-color: $border-grey;
+            font: 18px/1 $futura-heavy;
+            padding: 15px 20px;
+            border-bottom: 2px solid $white;
+            letter-spacing: 1px;
+        }
+
+        .summary-info {
+            border: 1px solid $border-grey;
+            padding: 6px 13px 18px;
+
+            > div {
+                padding: 11px 5px 12px;
+                border-bottom: 1px solid $text-light-grey;
+
+                &:last-child {
+                    border: none;
+                }
+
+                h4 {
+                    font: 14px/1 $futura-medium;
+                    font-weight: normal;
+                    padding-bottom: 3px;
+                    color: $text-dark-grey;
+                }
+
+                p {
+                    font: 14px/1.25 $futura-light;
+                    margin-top: 6px;
+                    color: $text-dark-grey;
+                    span {
+                        display: block;
+                        color: $text-light-mid-grey;
+                    }
+                }
+            }
+
+            > div:first-child {
+                p:first-child {font-family: $futura-medium;}
+                p span {
+                    color: $text-light-mid-grey;
+                    font-size: 12px;
+                }
+            }
+        }
+
+
+    }
+}
+
+#receipt-wrapper {
+    max-width: none;
+    width: 100%;
+    display: none;
+    z-index: 1001;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.field__message.field__message--warning > span {
+    display: block;
+    font-family: $futura-medium;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 20px 20px 20px 0;
+    text-align: left;
+    color: darkred;
+}
+
+
+/********************************
+* END OF CHECKOUT CSS
+*********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

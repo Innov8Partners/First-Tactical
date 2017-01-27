@@ -1,0 +1,76 @@
+@mixin wrap-stuff {
+    @include display(flex);
+    @include flex-wrap(wrap);
+}
+
+@mixin font-face-shopify-url ($family, $prefix, $weight, $style, $svg-hash, $feature, $stretch, $range) {
+    @font-face {
+        font-family: $family;
+        src: url(#{'{{ "#{$prefix}.eot" | asset_url }}'});
+
+        @if $svg-hash {
+            src: url(#{'{{ "#{$prefix}.eot?#iefix" | asset_url }}'}) format('embedded-opentype'),
+            url(#{'{{ "#{$prefix}.woff" | asset_url }}'}) format('woff'),
+            url(#{'{{ "#{$prefix}.ttf" | asset_url }}'}) format('truetype'),
+            url(#{'{{ "#{$prefix}.svg##{$svg-hash}" | asset_url }}'}) format('svg');
+        }
+
+        @if $weight {
+            font-weight: $weight;
+        }
+
+        @if $style {
+            font-style: $style;
+        }
+
+        @if $feature {
+            -webkit-font-feature-settings: $feature;
+            -moz-font-feature-settings: $feature;
+            font-feature-settings: $feature;
+        }
+
+        @if $stretch {
+            font-stretch: $stretch;
+        }
+
+        @if $range {
+            unicode-range: $range;
+        }
+    }
+}
+
+@mixin font-face-not-shopify ($family, $prefix, $weight, $style, $svg-hash, $feature, $stretch, $range) {
+    @font-face {
+        font-family: $family;
+        src: url("html_templates/fonts/#{$prefix}.eot");
+
+        @if $svg-hash {
+            src: url("html_templates/fonts/#{$prefix}.eot?#iefix") format('embedded-opentype'),
+            url("html_templates/fonts/#{$prefix}.woff") format('woff'),
+            url("html_templates/fonts/#{$prefix}.ttf") format('truetype'),
+            url("html_templates/fonts/#{$prefix}.svg##{$svg-hash}") format('svg');
+        }
+
+        @if $weight {
+            font-weight: $weight;
+        }
+
+        @if $style {
+            font-style: $style;
+        }
+
+        @if $feature {
+            -webkit-font-feature-settings: $feature;
+            -moz-font-feature-settings: $feature;
+            font-feature-settings: $feature;
+        }
+
+        @if $stretch {
+            font-stretch: $stretch;
+        }
+
+        @if $range {
+            unicode-range: $range;
+        }
+    }
+}

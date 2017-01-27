@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New User Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+
+    <link media="all" href="../first_tactical.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<main class="customer has-form two-col">
+
+    <section class="clearfix">
+
+        <h2>NEW USER REGISTRATION</h2>
+
+        <article class="lt-side clearfix">
+
+            <form method="post" action="https://www.firsttactical.com/account" id="create_customer" accept-charset="UTF-8">
+                <input type="hidden" value="create_customer" name="form_type" />
+                <input type="hidden" name="utf8" value="✓" />
+
+                <p class="required">* Required</p>
+
+                <label>* First Name</label>
+                <input type="text" class="text_block" value="" name="customer[first_name]" placeholder="" id="rFirstName" size="30">
+
+
+                <label>* Last Name</label>
+                <input type="text" class="text_block" value="" name="customer[last_name]" placeholder="" id="rLastName" size="30">
+
+
+                <label>* Email</label>
+                <input type="email" class="text_block" value="" name="customer[email]" placeholder="" id="rEmail" size="30">
+
+
+
+
+                <label>* Create Password</label>
+                <div class="has-tooltip">
+                    <input type="password" class="tip text_block" value="" name="customer[password]" id="password" size="30">
+
+
+                    <div class="tooltip" style="display:block;">
+                        <img alt="" class="tool_arrow" src="//cdn.shopify.com/s/files/1/1125/0762/t/3/assets/cvv_arrow.png?5002378707835692390">
+                        <h4 class="password">Password Must:</h4>
+                        <p class="characters fill">Be at least 8 characters long </p>
+                        <p class="letter fill">Contain 1 capital letter </p>
+                        <p class="number fill">Contain 1 number</p>
+                        <p class="character fill">Contain 1 special character</p>
+                    </div>
+
+                </div>
+
+
+
+                <label>* Verify Password</label>
+                <div class="has-tooltip">
+                    <input type="password" class="tip text_block" value="" name="confirm_password" id="confirm_password">
+
+
+                    <div class="tooltip">
+                        <img alt="" class="tool_arrow" src="//cdn.shopify.com/s/files/1/1125/0762/t/3/assets/cvv_arrow.png?5002378707835692390">
+                        <p class="confirm_password fill match">Passwords must match</p>
+                    </div>
+
+                </div>
+
+
+                <label class="newsletters">
+                    <input style="-webkit-appearance: checkbox;" name="customer[accepts_marketing]" value="true" type="checkbox" checked />
+                    Receive emails for our monthly newsletters
+                </label>
+
+
+                <label>Profession</label>
+                <select name="customer[tags][tag-1]">
+                    <option value="">Please Select</option>
+                    <option value="Profession: Law Enforcement">Law Enforcement</option>
+                    <option value="Profession: Fire">Fire</option>
+                    <option value="Profession: EMS">EMS</option>
+                    <option value="Profession: Other">Other</option>
+                </select>
+
+
+                <label>Department</label>
+                <input type="text" class="text_block" value="" name="customer[tags][tag-2]" placeholder="">
+
+
+                <div>
+                    <!--<input class="btn" type="submit" value="Create Account" />-->
+                    <a href="javascript:{}" onclick="document.getElementById('create_customer').submit(); return false;" class="btn">CREATE ACCOUNT<span class="arrow"></span></a>
+                </div>
+
+                <div class="errors"><ul><li class="first">Email can't be blank.</li><li class="last">Password can't be blank.</li></ul></div>
+
+            </form>
+
+        </article>
+
+
+        <article class="rt-side">
+
+            <div>
+                <h3>benefits of registration </h3>
+                <p>We'll remember your details.</p>
+                <p>Stay up-to date on everything First Tactical</p>
+            </div>
+
+        </article>
+
+    </section>
+
+
+</main>
+
+
+
+
+</body>
+</html>

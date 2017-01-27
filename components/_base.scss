@@ -1,0 +1,218 @@
+body {
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $futura-condensed-bold;
+    text-transform: uppercase;
+    line-height: 1;
+}
+h1 {
+    font-size: 60px;
+}
+h2 {
+    font-size: 42px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+p, ul {
+    font-family: $avenir-regular;
+    font-size: 14px;
+}
+ul.disc > li {
+    list-style: outside none disc;
+    line-height: 21px;
+    margin-left: 13px;
+    strong {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+a, a:active, a:link, a:visited, a:hover {
+    color: $text-dark-grey;
+    font-family: $avenir-medium;
+}
+.btn {
+    @include transition(all 0.2s ease);
+    background: $light-blue none repeat scroll 0 0;
+    border-bottom: 4px solid $dark-blue;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-family: $futura-heavy;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 6px 4px 6px;
+    min-height: 0;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    @media(min-width: $mobile-wide) {
+        padding: 10px 5px 10px;
+        font-size: 15px;
+    }
+    @media(min-width: $tablet) {
+        padding: 12px 10px;
+        font-size: 17px;
+    }
+    .arrow {
+        //background: url(html_templates/images/btn_arrow_right_white.png) center right no-repeat;
+        background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+        padding-right: 20px;
+    }
+    &.outline {
+        background: none repeat;
+        border: 2px solid $light-blue;
+        color: $text-dark-grey;
+        font-size: 13px;
+        padding: 10px 5px 10px;
+        min-height: 0;
+        .arrow {
+            //background: url(html_templates/images/btn_arrow_right_grey.png) right no-repeat;
+            background: url(#{'{{ "btn_arrow_right_grey.png" | asset_url }}'}) right no-repeat;
+            padding-right: 14px;
+        }
+    }
+    &.white {
+        background: $white;
+        color: $text-dark-grey;
+        border-bottom: 0;
+        .arrow {
+            //background: url(html_templates/images/btn_arrow_right_grey_14px.png) center right no-repeat;
+            background: url(#{'{{ "btn_arrow_right_grey_14px.png" | asset_url }}'}) center right no-repeat;
+            background-size: 7px;
+            padding-right: 14px;
+        }
+    }
+    &.white-outline {
+        background: $transparent-black;
+        color: $white;
+        border: 2px solid $white;
+        font-size: 12px;
+        @media(min-width: $mobile-wide) {
+            font-size: 13px;
+        }
+        .arrow {
+            //background: url(html_templates/images/btn_arrow_right_white.png) center right no-repeat;
+            background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+            padding-right: 20px;
+        }
+    }
+    &:hover {
+        background: $hover-blue;
+        &.outline {
+            background: $light-blue;
+            color: $white;
+            .arrow {
+                //background: url(html_templates/images/btn_arrow_right_white.png) center right no-repeat;
+                background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+                padding-right: 14px;
+            }
+        }
+        &.white {
+            color: $white;
+            background: $text-dark-grey;
+            .arrow {
+                //background: url(html_templates/images/btn_arrow_right_white.png) center right no-repeat;
+                background: url(#{'{{ "btn_arrow_right_white.png" | asset_url }}'}) center right no-repeat;
+            }
+        }
+        &.white-outline {
+            background: $white;
+            color: $text-dark-grey;
+            .arrow {
+                //background: url(html_templates/images/btn_arrow_right_grey_14px.png) center right no-repeat;
+                background: url(#{'{{ "btn_arrow_right_grey_14px.png" | asset_url }}'}) right no-repeat;
+            }
+        }
+    }
+    .grey {
+        .arrow {}
+    }
+}
+// Input styles
+input {
+
+}
+textarea {
+
+}
+select {
+
+}
+// Table Styles
+
+table {
+
+}
+tbody {
+
+}
+td {
+
+}
+tr {
+
+}
+th {
+
+}
+tfoot {
+
+}
+
+// Show and hide for different breakpoints
+.mobile-wide-hide, .tablet-hide, .laptop-hide, .wrapper-hide, .mobile-show {
+    display: inherit
+}
+
+.tablet-show, .laptop-show, .wrapper-show, .mobile-wide-show, .mobile-hide {
+    display: none
+}
+
+@media(min-width: $mobile-wide) {
+    .mobile-wide-hide {
+        display: none
+    }
+    .mobile-wide-show {
+        display: inherit
+    }
+}
+
+@media(min-width: $tablet) {
+    .tablet-hide {
+        display: none
+    }
+    .tablet-show {
+        display: inherit
+    }
+}
+
+@media(min-width: $laptop) {
+    .laptop-hide {
+        display: none
+    }
+    .laptop-show {
+        display: inherit;
+    }
+}
+
+@media(min-width: $wrapper) {
+    .wrapper-hide {
+        display: none
+    }
+    .wrapper-show {
+        display: inherit
+    }
+}
+
+*.unselectable {
+    @include user-select(none);
+}

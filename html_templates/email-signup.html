@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link media="all" href="../first_tactical_dev.css" rel="stylesheet" type="text/css">
+    <link media="all" href="css/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.screwdefaultbuttonsV2.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="js/our-story.js"></script>
+</head>
+<body>
+
+<main class="customer has-form two-col newsletter">
+    <section class="clearfix">
+        <h2>SIGN UP</h2>
+        <p class="desc">First Tactical has a busy schedule ahead, the next year will see the launch of the official First Tactical Blog, a full line of firefighter and EMS gear, and a second wave of our best selling bags, knives and belts. Stay up to date on all happenings by signing up for our newsletter.</p>
+        <form action="//firsttactical.us10.list-manage.com/subscribe/post-json?u=01ad38a2ce2b6332806b6b52e&amp;id=620d7a7cc6&amp;c=?" method="post" id="FTForm">
+            <article class="lt-side clearfix">
+                <p class="required">* Required</p>
+                <div id="first_name_div">
+                    <label>* First Name</label>
+                    <input id="mce-FNAME" name="FNAME" type="text" required>
+                </div>
+                <div id="last_name_div">
+                    <label>* Last Name</label>
+                    <input id="mce-LNAME" name="LNAME" type="text" required>
+                </div>
+                <div id="email_div">
+                    <label>* Email</label>
+                    <input name="EMAIL" id="mce-EMAIL" type="email" required>
+                </div>
+                <div id="profession_div">
+                    <label class="radio-label">* Profession</label>
+                    <div class="radio-div clearfix profession">
+                        <label>
+                            <input value="Law Enforcement" id="mce-MMERGE3-0" name="MMERGE3" type="radio" required>
+                            Law Enforcement
+                        </label>
+                        <label>
+                            <input value="Fire" id="mce-MMERGE3-1" name="MMERGE3" type="radio" required>
+                            Fire
+                        </label>
+                        <label>
+                            <input value="EMS" id="mce-MMERGE3-2" name="MMERGE3" type="radio" required>
+                            EMS
+                        </label>
+                    </div>
+                    <div class="radio-div clearfix">
+                        <label>
+                            <input class="radio other_radio" value="Other" id="mce-MMERGE3-4" name="MMERGE3" type="radio" required>
+                            Other
+                        </label>
+                        <input id="mce-MMERGE4" name="MMERGE4" type="text" disabled>
+                    </div>
+                </div>
+            </article>
+            <article class="rt-side">
+                <label>Department</label>
+                <input id="mce-MMERGE8" name="MMERGE8" type="text">
+                <label>Title/Position</label>
+                <input id="mce-MMERGE9" name="MMERGE9" type="text">
+                <label class="radio-label">Gender</label>
+                <div class="radio-div clearfix">
+                    <label><input value="Male" id="mce-MMERGE5-0" name="MMERGE5" type="radio"> Male </label>
+                    <label><input value="Female" id="mce-MMERGE5-1" name="MMERGE5" type="radio"> Female </label>
+                </div>
+                <label class="top">Zip Code</label>
+                <input maxlength="10" name="MMERGE6" id="mce-MMERGE6" type="text">
+                <label>How did you hear about us?</label>
+                <select name="MMERGE7" id="mce-MMERGE7">
+                    <option value="">Select</option>
+                    <option value="Online">Online</option>
+                    <option value="Email">Email</option>
+                    <option value="Magazine Ad">Magazine Ad</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Co-Worker">Co-Worker</option>
+                    <option value="YouTube">YouTube</option>
+                    <option value="Other">Other</option>
+                </select>
+            </article>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input name="b_01ad38a2ce2b6332806b6b52e_620d7a7cc6" tabindex="-1" value="" type="text">
+            </div>
+        </form>
+        <div class="btn-row">
+            <a role="button" class="submit_btn btn" onclick="submitForm()">Get Involved <span class="arrow"></span></a>
+            <span class="disable_btn"></span>
+            <a href="#thanks-popup" id="tempAnchor" style="display: none;"></a>
+            <div id="thanks-popup"  class="our-story-msg" style="display: none;">
+                <img class="logo"
+                     src="https://cdn.shopify.com/s/files/1/1125/0762/files/TS_first_t_logo.jpg?141348811675458048"
+                     alt="logo">
+                <h2>You're In.</h2>
+                <p>Thanks for signing up for First Tactical,
+                    <span id="msgFirstName" class="user_name"></span>.
+                </p>
+                <p>
+                    If you are chosen for our Field Testing program,
+                    you will be contacted directly for sizes and shipping information.
+                </p>
+            </div>
+            <a href="#error_popup" id="errorAnchor" style="display: none;"></a>
+            <div id="error-popup" class="our-story-msg" style="display: none;">
+                <img class="logo"
+                     src="https://cdn.shopify.com/s/files/1/1125/0762/files/TS_first_t_logo.jpg?141348811675458048"
+                     alt="logo">
+                <h2>We're experiencing some technical difficulties…</h2>
+                <p>We're sorry, but we are unable to complete your request at this time.
+                    Please try again shortly.</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

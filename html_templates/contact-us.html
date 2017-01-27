@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link media="all" href="../first_tactical_dev.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<main class="customer has-form two-col contact-us">
+    <section class="clearfix">
+        <h2>CONTACT US</h2>
+        <article class="lt-side clearfix">
+            <form method="post" action="/contact#contact_form" id="contact_form" class="contact-form" accept-charset="UTF-8">
+                <input type="hidden" value="contact" name="form_type" />
+                <input type="hidden" name="utf8" value="✓" />
+                <p>Your feedback is important to us. At First Tactical, we value your opinions and suggestions. It is vital for us to listen to you, our customer, and provide you with the exceptional service you expect. Please fill out the form below in detail and a customer service representative will be in contact within 48 hours.</p>
+                <p class="required">* Required</p>
+                <label class="text">* First Name</label>
+                <input type="text" class="text_block" required id="contactFormFirstName" name="contact[first-name]">
+                <label class="text">* Last Name</label>
+                <input type="text" class="text_block" required id="contactFormLastName" name="contact[last-name]">
+                <label class="text">* Email</label>
+                <input type="email" class="text_block" required id="contactFormEmail" name="contact[email]">
+                <label class="text">* Reason</label>
+                <select name="contact[reason]">
+                    <option selected="" value="Customer Service">Customer Service</option>
+                    <option value="Product feedback">Product feedback</option>
+                    <option value="Website">Website</option>
+                    <option value="Careers">Careers</option>
+                    <option value="Wear test">Wear test</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label class="text">* Message</label>
+                <textarea class="text_block" required id="contactFormMessage" name="contact[body]"></textarea>
+                <div>
+                    <input type="submit" class="btn" id="contactFormSubmit" value="SEND">
+                    <!--<a href="javascript:{}" onclick="document.getElementById('contact_form').submit(); return false;" class="btn">SEND<span class="arrow"></span></a>-->
+                </div>
+            </form>
+        </article>
+        <article class="rt-side">
+            <h3 class="title">Email</h3>
+            <p class="detail"><a href="mailto:Customer Service&lt;support@firsttactical.com&gt;">support@firsttactical.com</a></p>
+            <h3 class="title">Phone</h3>
+            <p class="detail">855.665.3410</p>
+            <h3 class="title">Address</h3>
+            <p class="detail">First Tactical Inc.<br>
+                4335 North Star Way<br>
+                Building D<br>
+                Modesto, CA 95356</p>
+        </article>
+    </section>
+</main>
+
+
+
+
+</body>
+</html>

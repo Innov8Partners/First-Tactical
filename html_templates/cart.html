@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Cart</title>
+    <!--<link media="all" href="../first_tactical.min.css" rel="stylesheet" type="text/css">-->
+    <link media="all" href="../first_tactical_dev.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body>
+    <main id="cart">
+        <h1 id="cart-top">SHOPPING CART</h1>
+
+        <section id="mobile-top-btn">
+            <p class="price"><span>SUBTOTAL (7 items) </span>$444.93</p>
+            <a href="#" class="btn"><span class="long-btn-txt">PROCEED TO </span>CHECKOUT<span class="arrow"></span></a>
+        </section>
+
+        <section class="cc">
+            <section id="items">
+                <article class="headings">
+                    <h4>ITEM DESCRIPTION</h4>
+                    <h4>QUANTITY</h4>
+                    <h4>ITEM PRICE</h4>
+                    <h4>SUBTOTAL</h4>
+                </article>
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/114001-men-tactix-tactical-pants-le-black_medium.jpg" />
+                    </div>
+
+
+                    <div class="dsc">
+                        <h5>MEN'S TACTIX TACTICAL PANTS</h5>
+                        <h6>Style 1248568.962</h6>
+
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>31</span></p>
+                        <p class="pants-length"><label>Length:</label> <span>31</span></p>
+                    </div>
+
+                    <div class="qty">
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" class="rmv" value="REMOVE" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$64.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$128.00</p>
+                    </div>
+
+
+                </article>
+
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/111001-men-tactix-ls-bdu-shirt-le-midnightnavy_medium.jpg" />
+                    </div>
+
+                    <div class="dsc">
+                        <h5>MEN'S TACTIX SERIES LONG SLEEVE BDU SHIRT</h5>
+                        <h6>Style 1274511-600</h6>
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>XL</span></p>
+                        <p><label>Length:</label> <span>Regular</span></p>
+                    </div>
+
+                    <div class="qty">
+
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" class="rmv" value="REMOVE" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$59.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$5,900.00</p>
+                    </div>
+
+                </article>
+
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/180003-ascend-messenger-bag-le-black-front_medium.jpg" />
+                    </div>
+
+                    <div class="dsc">
+                        <h5>ascend messenger bag</h5>
+                        <h6>Style 1274511-600</h6>
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>One Size</span></p>
+                    </div>
+
+                    <div class="qty">
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" value="REMOVE" class="rmv" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$59.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$590.00</p>
+                    </div>
+
+                </article>
+
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/114001-men-tactix-tactical-pants-le-black_medium.jpg" />
+                    </div>
+
+
+                    <div class="dsc">
+                        <h5>MEN'S TACTIX TACTICAL PANTS</h5>
+                        <h6>Style 1248568.962</h6>
+
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>31</span></p>
+                        <p class="pants-length"><label>Length:</label> <span>31</span></p>
+                    </div>
+
+                    <div class="qty">
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" class="rmv" value="REMOVE" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$64.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$128.00</p>
+                    </div>
+
+
+                </article>
+
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/111001-men-tactix-ls-bdu-shirt-le-midnightnavy_medium.jpg" />
+                    </div>
+
+                    <div class="dsc">
+                        <h5>MEN'S TACTIX SERIES LONG SLEEVE BDU SHIRT</h5>
+                        <h6>Style 1274511-600</h6>
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>XL</span></p>
+                        <p><label>Length:</label> <span>Regular</span></p>
+                    </div>
+
+                    <div class="qty">
+
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" class="rmv" value="REMOVE" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$59.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$5,900.00</p>
+                    </div>
+
+                </article>
+
+                <article class="itm">
+
+                    <div class="img">
+                        <img src="images/cart/180003-ascend-messenger-bag-le-black-front_medium.jpg" />
+                    </div>
+
+                    <div class="dsc">
+                        <h5>ascend messenger bag</h5>
+                        <h6>Style 1274511-600</h6>
+                        <p><label>Color:</label> <span>Black</span></p>
+                        <p><label>Size:</label> <span>One Size</span></p>
+                    </div>
+
+                    <div class="qty">
+
+                        <ul class="quantity">
+                            <li><a onclick="minus(this)" class="minus" href="javascript:void(0)"></a></li>
+                            <li>
+                                <input type="text" max="10" maxlength="5" value="1" size="2" name="quantity" id="quantity">
+                            </li>
+                            <li><a onclick="plus(this)" class="plus" href="javascript:void(0)"></a></li>
+                        </ul>
+
+                        <input type="button" value="REMOVE" class="rmv" />
+
+                    </div>
+
+                    <div class="prc">
+                        <p>$59.00</p>
+                    </div>
+
+                    <div class="sbt">
+                        <p>$590.00</p>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <aside id="summary">
+
+                <h6 class="heading">ORDER SUMMARY <span>(3 Items)</span></h6>
+
+                <section>
+
+                    <p class="subtotal">SUBTOTAL<span>$128.00</span></p>
+
+                    <a class="btn"><span class="long-btn-txt">PROCEED TO </span>CHECKOUT <span class="arrow"></span></a>
+
+                    <h6 class="promo-code">Got a promo code?
+                        <span>Please enter it during checkout.</span>
+                    </h6>
+
+                </section>
+
+                <h6 class="free-shipping">FREE SHIPPING & FREE RETURNS
+                    <span>on all items in your cart.
+                        <a href="#">Learn More</a>
+                    </span>
+                </h6>
+
+                <p class="cust-serv">
+                    <img src="images/cart/norton-logo.jpg" />
+                    NEED HELP ORDERING?<br>
+                    <span>855.665.3410</span><br>
+                    <a>Support@Firsttactical.com</a><br>
+                    <a>APO/FPO Shipping</a>
+                </p>
+
+            </aside>
+
+        </section>
+
+        <section id="also">
+            <h2>YOU MIGHT ALSO LIKE</h2>
+        </section>
+    </main>
+</body>
+</html>
